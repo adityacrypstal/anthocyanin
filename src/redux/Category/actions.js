@@ -6,3 +6,4 @@ const actions = {
         type: actions.GET_CATEGORIES
     })
 }
+export default actions;

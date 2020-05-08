@@ -6,3 +6,4 @@ const actions = {
         type: actions.GET_BLOGS
     })
 }
+export default actions;

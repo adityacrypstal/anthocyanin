@@ -5,7 +5,7 @@ import {createBrowserHistory} from "history";
 
 const history = createBrowserHistory()
 
-const listBlogs = async (requestOptions, actionName) =>
+const listCareers = async (requestOptions, actionName) =>
     await fetch(
         `google.cmo`, requestOptions
     )
@@ -14,23 +14,23 @@ const listBlogs = async (requestOptions, actionName) =>
         .catch(error => error);
 
 
-export function* getBlogs() {
+export function* getCareers() {
     try {
         yield put({
             type: actions.LOADING
         });
         const {data, error} = yield call(
-            listBlogs
+            listCareers
         );
-        if (data && data.blogs && data.blogs.rows.length > 0) {
+        if (data && data.careers && data.careers.rows.length > 0) {
             yield put({
-                type: actions.UPDATE_BLOGS,
-                blogs: data.blogs,
+                type: actions.UPDATE_CAREERS,
+                careers: data.careers,
             });
         } else {
             yield put({
-                type: actions.UPDATE_BLOGS,
-                blogs: [],
+                type: actions.UPDATE_CAREERS,
+                careers: [],
             });
         }
         if (error) throw error;
@@ -41,6 +41,6 @@ export function* getBlogs() {
 
 export default function* rootSaga() {
     yield all([
-        yield takeEvery(actions.GET_BLOGS, getBlogs)
+        yield takeEvery(actions.GET_CAREERS, getCareers)
     ]);
 }

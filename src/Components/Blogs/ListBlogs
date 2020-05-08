@@ -1,0 +1,11 @@
+import React from 'react';
+
+const ListBlogs = () => {
+    return (
+        <div>
+            List Blogs
+        </div>
+    );
+};
+
+export default ListBlogs;

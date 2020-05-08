@@ -1,10 +1,10 @@
 import actions from './actions';
 
 const initState = {
-    blogs: [],
+    careers: [],
     loading: false,
-    initialBlog: false,
-    selectedBlog: null,
+    initialCareer: false,
+    selectedCareer: null,
     totalCount: 0
 };
 
@@ -13,10 +13,10 @@ export default function careerReducer(state = initState, {type, payload, ...acti
         case actions.UPDATE_BLOGS: {
             return {
                 ...state,
-                blogs: action.blogs.rows,
-                totalCount: action.blogs.count,
+                careers: action.careers.rows,
+                totalCount: action.careers.count,
                 loading: false,
-                initialBlog: true
+                initialCareer: true
             };
         }
         case actions.LOADING:

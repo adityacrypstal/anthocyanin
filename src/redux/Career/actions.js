@@ -1,8 +1,9 @@
 const actions = {
-    GET_BLOGS: 'GET_BLOGS',
-    UPDATE_BLOGS: 'UPDATE_BLOGS',
+    GET_CAREERS: 'GET_CAREERS',
+    UPDATE_CAREERS: 'UPDATE_CAREERS',
     LOADING: 'LOADING',
-    getBlogs: () => ({
-        type: actions.GET_BLOGS
+    getCareers: () => ({
+        type: actions.GET_CAREERS
     })
 }
+export default actions;
