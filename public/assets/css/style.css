@@ -254,6 +254,7 @@ p {
     color: #060606;
     text-transform: uppercase;
     transition: all 0.3 ease-in-out;
+    cursor: pointer;
 }
 
 .main-nav .dropdown-item.active,
@@ -263,6 +264,10 @@ p {
 
 .main-nav li.active a,
 .main-nav li a:hover {
+    color: var(--main-color);
+}
+.main-nav li.active span,
+.main-nav a:hover,li span:hover {
     color: var(--main-color);
 }
 

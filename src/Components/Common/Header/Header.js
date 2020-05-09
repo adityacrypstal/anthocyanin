@@ -1,5 +1,8 @@
 import React from 'react';
+import NavLink from "./NavLink";
+import {createBrowserHistory} from "history";
 
+const history = createBrowserHistory()
 const Header = () => {
     return (
         <header>
@@ -14,32 +17,41 @@ const Header = () => {
 
                     <div id="remenu-list">
                         <ul className="nav nav-bar ">
-                            <li className="active"><a href="index.html">Home</a></li>
+                            <NavLink to={'/'}>
+                                <li className="active">Home</li>
+                            </NavLink>
                             <li className="">
-                                <span data-toggle="dropdown">ABOUT US
+                                <span data-toggle="dropdown">ABOUT US</span>
                                     <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="overview.html">Overview</a>
-                                        <a className="dropdown-item" href="inner.html">CERTIFICATIONS</a>
-                                        <a className="dropdown-item" href="inner.html">FACILITIES</a>
-                                        <a className="dropdown-item" href="inner.html">TEAM</a>
+                                        <NavLink className="dropdown-item" to={'/overview'}>Overview</NavLink>
+                                        <NavLink className="dropdown-item"
+                                                 to={'/overview'}>CERTIFICATIONS</NavLink>
+                                        <NavLink className="dropdown-item" to={'/overview'}>FACILITIES</NavLink>
+                                        <NavLink className="dropdown-item" to={'/overview'}>TEAM</NavLink>
 
                                     </div>
-                                </span>
+
                             </li>
                             <li className="">
-                                <span  data-toggle="dropdown">PRODUCTS
+                                <span data-toggle="dropdown">PRODUCTS</span>
                                     <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="products.html">Oleoresin</a>
-                                        <a className="dropdown-item" href="essential.html">Essential Oil</a>
+                                        <NavLink className="dropdown-item" to={'/category/1'}>Oleoresin</NavLink>
+                                        <NavLink className="dropdown-item" to={'/product/1'}>Essential Oil</NavLink>
                                     </div>
-                                </span>
+
                             </li>
-                            <li className=""><a href="r&d.html">R & D</a></li>
-                            <li className=""><a href="news.html">NEWS & EVENTS</a></li>
-                            <li className=""><a href="blog.html">BLOG</a></li>
-                            <li className="pr-0">
-                                <a href="contact.html">CONTACT US</a>
-                            </li>
+                            <NavLink to={'/researches'}>
+                                <li className="test">R & D</li>
+                            </NavLink>
+                            <NavLink to={'/news'}>
+                                <li className="test">NEWS & EVENTS</li>
+                            </NavLink>
+                            <NavLink to={'/blog'}>
+                                <li className="test">BLOG</li>
+                            </NavLink>
+                            <NavLink to={'/contact'}>
+                                <li className="test">CONTACT US</li>
+                            </NavLink>
                         </ul>
                     </div>
                 </div>
@@ -59,32 +71,44 @@ const Header = () => {
                         </div>
                         <nav className="mt-20 main-nav">
                             <ul className="nav nav-bar ">
-                                <li className="active"><a href="index.html">Home</a></li>
+                                <NavLink to={'/'}>
+                                    <li className="active">Home</li>
+                                </NavLink>
                                 <li className="">
-                                    <span data-toggle="dropdown">ABOUT US
-                                        <div className="dropdown-menu">
-                                            <a className="dropdown-item" href="overview.html">Overview</a>
-                                            <a className="dropdown-item" href="inner.html">CERTIFICATIONS</a>
-                                            <a className="dropdown-item" href="inner.html">FACILITIES</a>
-                                            <a className="dropdown-item" href="inner.html">TEAM</a>
+                                    <div className="dropdown">
+                                        <span id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">ABOUT US</span>
+                                            <div className="dropdown-menu">
+                                                <NavLink className="dropdown-item" to={'/overview'}>Overview</NavLink>
+                                                <NavLink className="dropdown-item"
+                                                         to={'/overview'}>CERTIFICATIONS</NavLink>
+                                                <NavLink className="dropdown-item" to={'/overview'}>FACILITIES</NavLink>
+                                                <NavLink className="dropdown-item" to={'/overview'}>TEAM</NavLink>
 
-                                        </div>
-                                    </span>
+                                            </div>
+
+                                    </div>
                                 </li>
                                 <li className="">
-                                    <span  data-toggle="dropdown">PRODUCTS
+                                    <span data-toggle="dropdown">PRODUCTS</span>
                                         <div className="dropdown-menu">
-                                            <a className="dropdown-item" href="products.html">Oleoresin</a>
-                                            <a className="dropdown-item" href="essential.html">Essential Oil</a>
+                                            <NavLink className="dropdown-item" to={'/category/1'}>Oleoresin</NavLink>
+                                            <NavLink className="dropdown-item" to={'/product/1'}>Essential Oil</NavLink>
                                         </div>
-                                    </span>
+
                                 </li>
-                                <li className=""><a href="r&d.html">R & D</a></li>
-                                <li className=""><a href="news.html">NEWS & EVENTS</a></li>
-                                <li className=""><a href="blog.html">BLOG</a></li>
-                                <li className="pr-0">
-                                    <a href="contact.html">CONTACT US</a>
-                                </li>
+                                <NavLink to={'/researches'}>
+                                    <li className="test">R & D</li>
+                                </NavLink>
+                                <NavLink to={'/news'}>
+                                    <li className="test">NEWS & EVENTS</li>
+                                </NavLink>
+                                <NavLink to={'/blog'}>
+                                    <li className="test">BLOG</li>
+                                </NavLink>
+                                <NavLink to={'/contact'}>
+                                    <li className="test">CONTACT US</li>
+                                </NavLink>
                             </ul>
                         </nav>
                     </div>
