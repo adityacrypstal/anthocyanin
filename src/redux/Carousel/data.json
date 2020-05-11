@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Anthocyanin",
+    "subtitle": "Sense Of Essense",
+    "mobileImage": "/assets/images/mob_slider_1.png",
+    "webImage": "/assets/images/slider_1.png",
+    "href": "/news"
+  },{
+    "title": "test",
+    "subtitle": "Sense Of test1",
+    "mobileImage": "/assets/images/mob_slider_1.png",
+    "webImage": "/assets/images/slider_1.png",
+    "href": "/news"
+  },{
+    "title": "test2",
+    "subtitle": "Sense Of tset2",
+    "mobileImage": "/assets/images/mob_slider_1.png",
+    "webImage": "/assets/images/slider_1.png",
+    "href": "/news"
+  }
+
+]

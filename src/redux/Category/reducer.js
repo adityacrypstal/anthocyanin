@@ -13,10 +13,17 @@ export default function categoryReducer(state = initState, {type, payload, ...ac
         case actions.UPDATE_CATEGORIES: {
             return {
                 ...state,
-                categories: action.categories.rows,
-                totalCount: action.categories.count,
+                categories: action.categories,
+                totalCount: action.categories.length,
                 loading: false,
                 initialCategory: true
+            };
+        }
+        case actions.PUT_CATEGORY: {
+            return {
+                ...state,
+                selectedCategory: action.category,
+                loading: false
             };
         }
         case actions.LOADING:

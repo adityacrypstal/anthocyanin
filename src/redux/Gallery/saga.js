@@ -1,12 +1,11 @@
 import {all, takeEvery, put, call, take} from 'redux-saga/effects';
 import actions from './actions';
-
+import datas from './data.json';
 import {createBrowserHistory} from "history";
 
 const history = createBrowserHistory()
-const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
-const listProducts = async (requestOptions, actionName) =>
+const listGallery = async (requestOptions, actionName) =>
     await fetch(
         `google.cmo`, requestOptions
     )
@@ -15,23 +14,25 @@ const listProducts = async (requestOptions, actionName) =>
         .catch(error => error);
 
 
-export function* getProducts() {
+export function* getGallery() {
     try {
         yield put({
             type: actions.LOADING
         });
-        const {data, error} = yield call(
-            listProducts
-        );
-        if (data && data.products && data.products.rows.length > 0) {
+        // const {data, error} = yield call(
+        //     listGallery
+        // );
+        const data = datas;
+        const error = null;
+        if (data) {
             yield put({
-                type: actions.UPDATE_PRODUCTS,
-                products: data.products,
+                type: actions.UPDATE_GALLERY,
+                gallery: data,
             });
         } else {
             yield put({
-                type: actions.UPDATE_PRODUCTS,
-                products: [],
+                type: actions.UPDATE_GALLERY,
+                gallery: [],
             });
         }
         if (error) throw error;
@@ -42,6 +43,6 @@ export function* getProducts() {
 
 export default function* rootSaga() {
     yield all([
-        yield takeEvery(actions.GET_PRODUCTS, getProducts)
+        yield takeEvery(actions.GET_GALLERY, getGallery)
     ]);
 }

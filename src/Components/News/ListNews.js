@@ -1,6 +1,17 @@
 import React from 'react';
+import Recent from "./Recent";
+import {useDispatch, useSelector} from "react-redux";
+import newsActions from "../../redux/News/actions";
+import NewsLoader from "../../Helpers/newsLoader";
 
 const ListNews = () => {
+    const {initialNews, news, loading} = useSelector(state => state.news);
+    const dispatch = useDispatch();
+    React.useEffect(() => {
+        if(!initialNews){
+            dispatch(newsActions.getNews());
+        }
+    }, [dispatch, initialNews]);
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -37,102 +48,33 @@ const ListNews = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-8">
-                                <div className="news-list">
-                                    <div className="card post-items">
-                                        <img className="card-img-top img-fluid" src="/assets/images/gallery.png"
-                                             alt="Card image"
-                                             style={{width:'100%'}} />
-                                        <div className="card-body">
-                                            <div className="d-flex written">
-                                                <a href="#">February 18, 2016</a>
+                                {news&&!loading ? news.map((data,i)=>(
+                                    <div className="news-list">
+                                        <div className="card post-items">
+                                            <img className="card-img-top img-fluid" src={data.img}
+                                                 alt="Card image"
+                                                 style={{width:'100%'}} />
+                                            <div className="card-body">
+                                                <div className="d-flex written">
+                                                    <a href="#">{data.date}</a>
 
+                                                </div>
+                                                <h4 className="card-title"><a href=""> {data.subtitle}<span> {data.title}</span></a>
+                                                </h4>
+                                                <p className="card-text">
+                                                   {data.desc}
+                                                </p>
+                                                <a href="#" className="btn-more">Readmore</a>
                                             </div>
-                                            <h4 className="card-title"><a href=""> Tour to<span> Anthocyanin</span></a>
-                                            </h4>
-                                            <p className="card-text">
-                                                Vivamus condimentum purus in lorem molestie fermentum. Nulla
-                                                suscipit nibh eu
-                                                ultricies pellentesque. Fusce consectetur velit eu…
-                                            </p>
-                                            <a href="#" className="btn-more">Readmore</a>
                                         </div>
                                     </div>
-                                    <div className="card post-items">
-                                        <img className="card-img-top img-fluid" src="/assets/images/gallery.png"
-                                             alt="Card image"
-                                             style={{width:'100%'}} />
-                                        <div className="card-body">
-                                            <div className="d-flex written">
-                                                <a href="#">February 18, 2016</a>
-
-                                            </div>
-                                            <h4 className="card-title"><a href=""> Tour to<span> Anthocyanin</span></a>
-                                            </h4>
-                                            <p className="card-text">
-                                                Vivamus condimentum purus in lorem molestie fermentum. Nulla
-                                                suscipit nibh eu
-                                                ultricies pellentesque. Fusce consectetur velit eu…
-                                            </p>
-                                            <a href="#" className="btn-more">Readmore</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                )):<div>
+                                    <div className="news-list"><NewsLoader/></div>
+                                    <div className="news-list"><NewsLoader/></div>
+                                </div>}
                             </div>
                             <div className="col-md-4">
-
-                                <div className="category recent">
-                                    <h5>Recent Posts</h5>
-                                    <ul>
-                                        <li className="d-flex">
-                                            <div className="re-post">
-                                                <img src="/assets/images/Quality_1.png" alt="" />
-                                            </div>
-                                            <div className="re-consent">
-                                                <h4>Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p className="d-flex">
-                                                    <span className="recent-posts__date">14.11.2016</span>
-                                                    <span className="recent-posts__views">951 views</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li className="d-flex">
-                                            <div className="re-post">
-                                                <img src="/assets/images/Quality_2.png" alt="" />
-                                            </div>
-                                            <div className="re-consent">
-                                                <h4>Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p className="d-flex">
-                                                    <span className="recent-posts__date">14.11.2016</span>
-                                                    <span className="recent-posts__views">951 views</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li className="d-flex">
-                                            <div className="re-post">
-                                                <img src="/assets/images/Quality_3.png" alt="" />
-                                            </div>
-                                            <div className="re-consent">
-                                                <h4>Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p className="d-flex">
-                                                    <span className="recent-posts__date">14.11.2016</span>
-                                                    <span className="recent-posts__views">951 views</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li className="d-flex">
-                                            <div className="re-post">
-                                                <img src="/assets/images/Quality_1.png" alt="" />
-                                            </div>
-                                            <div className="re-consent">
-                                                <h4>Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p className="d-flex">
-                                                    <span className="recent-posts__date">14.11.2016</span>
-                                                    <span className="recent-posts__views">951 views</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <Recent/>
                             </div>
                         </div>
                     </div>

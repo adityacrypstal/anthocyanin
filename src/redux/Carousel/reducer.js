@@ -1,22 +1,22 @@
 import actions from './actions';
 
 const initState = {
-    blogs: [],
+    carousels: [],
     loading: false,
-    initialBlog: false,
-    selectedBlog: null,
+    initialCarousel: false,
+    selectedCarousel: null,
     totalCount: 0
 };
 
-export default function blogReducer(state = initState, {type, payload, ...action}) {
+export default function carouselReducer(state = initState, {type, payload, ...action}) {
     switch (type) {
-        case actions.UPDATE_BLOGS: {
+        case actions.UPDATE_CAROUSEL: {
             return {
                 ...state,
-                blogs: action.blogs,
-                totalCount: action.blogs.length ,
+                carousels: action.carousels,
+                totalCount: action.carousels.length,
                 loading: false,
-                initialBlog: true
+                initialCarousel: true
             };
         }
         case actions.LOADING:

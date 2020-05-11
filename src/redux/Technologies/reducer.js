@@ -1,22 +1,22 @@
 import actions from './actions';
 
 const initState = {
-    blogs: [],
+    technologies: [],
     loading: false,
-    initialBlog: false,
-    selectedBlog: null,
+    initialTechnology: false,
+    selectedTechnology: null,
     totalCount: 0
 };
 
-export default function blogReducer(state = initState, {type, payload, ...action}) {
+export default function technologyReducer(state = initState, {type, payload, ...action}) {
     switch (type) {
-        case actions.UPDATE_BLOGS: {
+        case actions.UPDATE_TECHNOLOGIES: {
             return {
                 ...state,
-                blogs: action.blogs,
-                totalCount: action.blogs.length ,
+                technologies: action.technologies,
+                totalCount: action.technologies.length,
                 loading: false,
-                initialBlog: true
+                initialTechnology: true
             };
         }
         case actions.LOADING:

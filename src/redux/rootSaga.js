@@ -6,6 +6,9 @@ import contactSaga from './Contact/saga'
 import newsSaga from './News/saga'
 import productSaga from './Product/saga'
 import rdSaga from './RD/saga'
+import carouselSaga from './Carousel/saga'
+import technologySaga from './Technologies/saga'
+import gallerySaga from './Gallery/saga'
 export default function* rootSaga() {
 
     yield all([
@@ -15,6 +18,9 @@ export default function* rootSaga() {
         contactSaga(),
         newsSaga(),
         productSaga(),
-        rdSaga()
+        rdSaga(),
+        carouselSaga(),
+        technologySaga(),
+        gallerySaga()
     ]);
 }

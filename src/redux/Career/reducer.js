@@ -10,11 +10,11 @@ const initState = {
 
 export default function careerReducer(state = initState, {type, payload, ...action}) {
     switch (type) {
-        case actions.UPDATE_BLOGS: {
+        case actions.UPDATE_CAREERS: {
             return {
                 ...state,
-                careers: action.careers.rows,
-                totalCount: action.careers.count,
+                careers: action.careers,
+                totalCount: action.careers.length,
                 loading: false,
                 initialCareer: true
             };

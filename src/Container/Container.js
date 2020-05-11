@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import Layout from "../Components/Common/Layout";
 import {store} from '../redux/store'
 import PageNotFound from "../Components/Common/PageNotFound";
+import Loader from "../Components/Common/Loader";
 
 const browserHistory = createBrowserHistory({ queryKey: false })
 const routes = [
@@ -88,7 +89,7 @@ class Container extends Component {
         return (
             <Provider store={store}>
                 <BrowserRouter history={browserHistory}>
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Loader loading ={true}/>}>
                         <Switch>
                             {routes.map((route, idx) => (
                                 <Route exact={route.exact} key={idx} path={`${route.path}`}>

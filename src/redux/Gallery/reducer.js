@@ -1,20 +1,20 @@
 import actions from './actions';
 
 const initState = {
-    blogs: [],
+    gallery: [],
     loading: false,
-    initialBlog: false,
-    selectedBlog: null,
+    initialGallery: false,
+    selectedGallery: null,
     totalCount: 0
 };
 
-export default function blogReducer(state = initState, {type, payload, ...action}) {
+export default function galleryReducer(state = initState, {type, payload, ...action}) {
     switch (type) {
-        case actions.UPDATE_BLOGS: {
+        case actions.UPDATE_GALLERY: {
             return {
                 ...state,
-                blogs: action.blogs,
-                totalCount: action.blogs.length ,
+                gallery: action.gallery,
+                totalCount: action.gallery.length,
                 loading: false,
                 initialBlog: true
             };

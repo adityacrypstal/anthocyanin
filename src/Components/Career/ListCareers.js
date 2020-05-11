@@ -1,6 +1,17 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import careerAction from "../../redux/Career/actions";
+import Loader from "../Common/Loader";
+import CareerLoader from "../../Helpers/CareerLoader";
 
 const ListCareers = () => {
+    const {initialCareer, careers, loading} = useSelector(state => state.careers);
+    const dispatch = useDispatch();
+    React.useEffect(() => {
+        if (!initialCareer) {
+            dispatch(careerAction.getCareers());
+        }
+    }, [dispatch, initialCareer]);
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -35,91 +46,36 @@ const ListCareers = () => {
                     <div className="open-positions">
                         <h3>Open Positions</h3>
                         <ul className="career-list">
-                            <li className="d-flex">
-                                <div className="designation">
-                                    <h4>
-                                        <a href="">Lorem ipsum dolor sit amet,</a>
-                                    </h4>
-                                    <span className="designation-type">FULL TIME</span>
-                                    <span className="designation-type">REMOTE</span>
+                            {careers&&!loading? careers.map((data,i)=>(
+                                <li className="d-flex">
+                                    <div className="designation">
+                                        <h4>
+                                            <a href="">{data.title}</a>
+                                        </h4>
+                                        {data.tags.map(tag=>(
+                                            <span className="designation-type">{tag}</span>
+                                        ))}
 
-                                </div>
-                                <div className="location">
-                                    <p className="state">Gurugram</p>
-                                    <p className="country">India</p>
-                                </div>
-                                <div className="apply-btn">
-                                    <a href="#" className="btn" role="button">VIEW AND APPLY</a>
-                                </div>
-                            </li>
-                            <li className="d-flex">
-                                <div className="designation">
-                                    <h4>
-                                        <a href="">Lorem ipsum dolor sit amet,</a>
-                                    </h4>
-                                    <span className="designation-type">FULL TIME</span>
-                                    <span className="designation-type">REMOTE</span>
-
-                                </div>
-                                <div className="location">
-                                    <p className="state">Gurugram</p>
-                                    <p className="country">India</p>
-                                </div>
-                                <div className="apply-btn">
-                                    <a href="#" className="btn" role="button">VIEW AND APPLY</a>
-                                </div>
-                            </li>
-                            <li className="d-flex">
-                                <div className="designation">
-                                    <h4>
-                                        <a href="">Lorem ipsum dolor sit amet,</a>
-                                    </h4>
-                                    <span className="designation-type">FULL TIME</span>
-                                    <span className="designation-type">REMOTE</span>
-
-                                </div>
-                                <div className="location">
-                                    <p className="state">Gurugram</p>
-                                    <p className="country">India</p>
-                                </div>
-                                <div className="apply-btn">
-                                    <a href="#" className="btn" role="button">VIEW AND APPLY</a>
-                                </div>
-                            </li>
-                            <li className="d-flex">
-                                <div className="designation">
-                                    <h4>
-                                        <a href="">Lorem ipsum dolor sit amet,</a>
-                                    </h4>
-                                    <span className="designation-type">FULL TIME</span>
-                                    <span className="designation-type">REMOTE</span>
-
-                                </div>
-                                <div className="location">
-                                    <p className="state">Gurugram</p>
-                                    <p className="country">India</p>
-                                </div>
-                                <div className="apply-btn">
-                                    <a href="#" className="btn" role="button">VIEW AND APPLY</a>
-                                </div>
-                            </li>
-                            <li className="d-flex">
-                                <div className="designation">
-                                    <h4>
-                                        <a href="">Lorem ipsum dolor sit amet,</a>
-                                    </h4>
-                                    <span className="designation-type">FULL TIME</span>
-                                    <span className="designation-type">REMOTE</span>
-
-                                </div>
-                                <div className="location">
-                                    <p className="state">Gurugram</p>
-                                    <p className="country">India</p>
-                                </div>
-                                <div className="apply-btn">
-                                    <a href="#" className="btn" role="button">VIEW AND APPLY</a>
-                                </div>
-                            </li>
+                                    </div>
+                                    <div className="location">
+                                        <p className="state">{data.location}</p>
+                                        <p className="country">{data.country}</p>
+                                    </div>
+                                    <div className="apply-btn">
+                                        <a href="#" className="btn" role="button">VIEW AND APPLY</a>
+                                    </div>
+                                </li>
+                            )):(<div>
+                                <li className="d-flex">
+                                   <CareerLoader/>
+                                </li>
+                                <li className="d-flex">
+                                   <CareerLoader/>
+                                </li>
+                                <li className="d-flex">
+                                   <CareerLoader/>
+                                </li>
+                            </div>)}
                         </ul>
                     </div>
                 </div>

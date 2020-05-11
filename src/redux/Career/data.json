@@ -1,0 +1,16 @@
+[{
+  "title": "Lorem ipsum dolor sit amet,",
+  "tags": ["FULL TIME","REMOTE"],
+  "location": "Gurugram",
+  "Country": "India"
+},{
+  "title": "Lorem ipsum dolor sit amet,",
+  "tags": ["PART TIME","REMOTE"],
+  "location": "Gurugram",
+  "Country": "India"
+},{
+  "title": "Lorem ipsum dolor sit amet,",
+  "tags": ["FULL TIME","OFFICE"],
+  "location": "Gurugram",
+  "Country": "India"
+}]

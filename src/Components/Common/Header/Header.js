@@ -66,7 +66,7 @@ const Header = () => {
                             <ul className="nav nav-bar d-flex">
                                 <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 00000000000</a></li>
                                 <li className="mr-50"><a href="#mailto:"><span>MAIL</span>info@anthocyanin.com</a></li>
-                                <li><a href="career.html"><span className="m-0">CAREER</span></a></li>
+                                <NavLink to={'/careers'}><li><span className="m-0">CAREER</span></li></NavLink>
                             </ul>
                         </div>
                         <nav className="mt-20 main-nav">
