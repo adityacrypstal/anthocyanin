@@ -62,7 +62,7 @@ const ListCareers = () => {
                                         <p className="country">{data.country}</p>
                                     </div>
                                     <div className="apply-btn">
-                                        <a href="#" className="btn" role="button">VIEW AND APPLY</a>
+                                        <a href="/career/1" className="btn" role="button">VIEW AND APPLY</a>
                                     </div>
                                 </li>
                             )):(<div>
