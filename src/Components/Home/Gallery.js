@@ -11,6 +11,7 @@ const Gallery = () => {
             dispatch(galleryAction.getGallery());
         }
     }, [dispatch, initialGallery]);
+
     return (
         <section className="gallery">
             <div className="container">
