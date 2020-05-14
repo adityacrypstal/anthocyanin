@@ -59,7 +59,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "set PORT=3002 && PORT=3002 react-scripts start || react-scripts start",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
