@@ -33,7 +33,7 @@ const ListResearch = () => {
                     <div className="ourteam-box">
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="teamImg" style={{background: 'url("/assets/images/spices2.png")'}}></div>
+                                <div className="teamImg" style={{background: 'url("./assets/images/spices2.png")'}}></div>
                             </div>
                             <div className="col-md-8">
                                 <div className="ourteam-txt">
@@ -56,7 +56,7 @@ const ListResearch = () => {
                     <div className="ourteam-box lightblue">
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="teamImg" style={{background: 'url("/assets/images/spices2.png")'}}></div>
+                                <div className="teamImg" style={{background: 'url("./assets/images/spices2.png")'}}></div>
                             </div>
                             <div className="col-md-8">
                                 <div className="ourteam-txt">
@@ -84,7 +84,7 @@ const ListResearch = () => {
                     <div className="ourteam-box">
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="teamImg" style={{background: 'url("/assets/images/spices2.png")'}}></div>
+                                <div className="teamImg" style={{background: 'url("./assets/images/spices2.png")'}}></div>
                             </div>
                             <div className="col-md-8">
                                 <div className="ourteam-txt">

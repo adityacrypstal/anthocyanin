@@ -1,5 +1,5 @@
 import React from 'react';
-
+const logo = `${process.env.PUBLIC_URL}/assets/images/footer-logo.png`;
 const Footer = () => {
     return (
         <div>
@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
-                            <img src="/assets/images/footer-logo.png" className="img-fluid footer-logo" alt="footer logo" />
+                            <img src={logo} className="img-fluid footer-logo" alt="footer logo" />
                         </div>
                         <div className="col-md-3">
                             <h5>Head Office</h5>

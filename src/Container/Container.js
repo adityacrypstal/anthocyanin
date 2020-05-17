@@ -7,7 +7,7 @@ import {store} from '../redux/store'
 import PageNotFound from "../Components/Common/PageNotFound";
 import Loader from "../Components/Common/Loader";
 
-const browserHistory = createBrowserHistory({ queryKey: false })
+const browserHistory = createBrowserHistory({ queryKey: false, basename:process.env.PUBLIC_URL })
 const routes = [
     {
         path: '/',
@@ -88,7 +88,7 @@ class Container extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter history={browserHistory}>
+                <BrowserRouter history={browserHistory} basename={process.env.PUBLIC_URL}>
                     <Suspense fallback={<Loader loading ={true}/>}>
                         <Switch>
                             {routes.map((route, idx) => (

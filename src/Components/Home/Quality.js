@@ -14,7 +14,7 @@ const Quality = () => {
                     veteran QC team are well versed in testing the quality parameters such as active compounds,
                     solvent
                     residues, moistures, heavy metals, microbiology, pesticides and toxins. </p>
-                <a href="#">More about Quality and Assurance <img src="/assets/images/linkicon.png" alt="more"/>
+                <a href="#">More about Quality and Assurance <img src="./assets/images/linkicon.png" alt="more"/>
                 </a>
             </div>
         </section>

@@ -3,20 +3,20 @@
   "subtitle": "TOUR TO",
   "date": "FEBRUARY 18, 2020",
   "desc": "Vivamus condimentum purus in lorem molestie fermentum. Nulla suscipit nibh eu ultricies pellentesque. Fusce consectetur velit eu…",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 
 },{
   "title": "STAY HOME, STAY SAFE",
   "subtitle": "COVID 19",
   "date": "FEBRUARY 18, 2020",
   "desc": "Vivamus condimentum purus in lorem molestie fermentum. Nulla suscipit nibh eu ultricies pellentesque. Fusce consectetur velit eu…",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 
 },{
   "title": "ANTHOCYNIN",
   "subtitle": "TOUR TO",
   "date": "FEBRUARY 18, 2020",
   "desc": "Vivamus condimentum purus in lorem molestie fermentum. Nulla suscipit nibh eu ultricies pellentesque. Fusce consectetur velit eu…",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 
 }]

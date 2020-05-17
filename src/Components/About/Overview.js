@@ -23,7 +23,7 @@ const Overview = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <img className="img-fluid" src="/assets/images/about.png" alt="Chania" />
+                            <img className="img-fluid" src="./assets/images/about.png" alt="Chania" />
                         </div>
                     </div>
                     <div className="overview">
@@ -139,7 +139,7 @@ const Overview = () => {
                             </div>
                             <div className="col-md-6">
                                 <div className="overview-listImg valuesimg"
-                                     style={{background: "url(/assets/images/gallery.png)"}}>
+                                     style={{background: "url(./assets/images/gallery.png)"}}>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -183,7 +183,7 @@ const Overview = () => {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="/assets/images/spices2.png" />
+                                    <img className="card-img-top" src="./assets/images/spices2.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>What we</span>
@@ -203,7 +203,7 @@ const Overview = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="/assets/images/spices2.png" />
+                                    <img className="card-img-top" src="./assets/images/spices2.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>What makes</span>
@@ -229,7 +229,7 @@ const Overview = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="/assets/images/spices2.png" />
+                                    <img className="card-img-top" src="./assets/images/spices2.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>Why</span>

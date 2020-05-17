@@ -3,13 +3,13 @@ import actions from './actions';
 import datas from './data.json';
 import recent from './recent.json';
 import {createBrowserHistory} from "history";
+import config from '../../config'
 
 const history = createBrowserHistory()
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
-
 const listNews = async (requestOptions, actionName) =>
     await fetch(
-        `google.cmo`, requestOptions
+        `${config.API_URL}/api/cms/get_news`, requestOptions
     )
         .then(res => res.json())
         .then(res => res)
@@ -21,10 +21,12 @@ export function* getNews() {
         yield put({
             type: actions.LOADING
         });
-        //
-        const data = datas;
-        const error = null;
-        yield call(delay, 2000)
+        const {data, error} = yield call(
+            listNews
+        )
+        // const data = datas;
+        // const error = null;
+        // yield call(delay, 2000)
 
         if (data) {
             yield put({

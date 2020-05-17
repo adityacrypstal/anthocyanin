@@ -1,13 +1,14 @@
 import {all, takeEvery, put, call, take} from 'redux-saga/effects';
 import actions from './actions';
-
+import config from '../../config';
 import {createBrowserHistory} from "history";
 import datas from './data.json';
 const history = createBrowserHistory()
 
-const listCarousels = async (requestOptions, actionName) =>
+
+const listCarousels = async () =>
     await fetch(
-        `google.cmo`, requestOptions
+        `${config.API_URL}/api/cms/get_home_carousel`
     )
         .then(res => res.json())
         .then(res => res)
@@ -19,11 +20,11 @@ export function* getCarousels() {
         yield put({
             type: actions.LOADING_CAROUSEL
         });
-        // const {data, error} = yield call(
-        //     listCarousels
-        // );
-        const data = datas;
-        const error = null
+        const {data, error} = yield call(
+            listCarousels
+        );
+        // const data = datas;
+        // const error = null
         if (data) {
             yield put({
                 type: actions.UPDATE_CAROUSEL,

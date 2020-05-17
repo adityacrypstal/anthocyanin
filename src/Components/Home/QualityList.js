@@ -15,7 +15,7 @@ const QualityList = () => {
                         </div>
 
                         <figure>
-                            <img src="/assets/images/Quality_1.png" className="img-fluid" className="img-fluid" alt=""/>
+                            <img src="./assets/images/Quality_1.png" className="img-fluid" className="img-fluid" alt=""/>
                             <figcaption><span>01.</span></figcaption>
                         </figure>
                     </div>
@@ -28,7 +28,7 @@ const QualityList = () => {
                         </div>
 
                         <figure>
-                            <img src="/assets/images/Quality_2.png" className="img-fluid" className="img-fluid" alt=""/>
+                            <img src="./assets/images/Quality_2.png" className="img-fluid" className="img-fluid" alt=""/>
                             <figcaption><span>02.</span></figcaption>
                         </figure>
                     </div>
@@ -43,7 +43,7 @@ const QualityList = () => {
                         </div>
 
                         <figure>
-                            <img src="/assets/images/Quality_3.png" className="img-fluid" className="img-fluid" alt=""/>
+                            <img src="./assets/images/Quality_3.png" className="img-fluid" className="img-fluid" alt=""/>
                             <figcaption><span>03.</span></figcaption>
                         </figure>
                     </div>

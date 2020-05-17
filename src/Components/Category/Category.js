@@ -20,7 +20,7 @@ const Category = () => {
         <div>
             <div className="breadcrumb-wapper">
                 <div className="container">
-                    <div className="row">
+                    <div className="row ">
                         <div className="col-md-6">
                             <h3><span>Anthocyanin</span>
                                 Sense of Essence</h3>
@@ -38,14 +38,15 @@ const Category = () => {
             <div className="productListwapper oleoresins">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 ">
                             {selectedCategory&&!loading ? (<div className="product-header">
                                 <h4 className="header-title">{selectedCategory&&selectedCategory.title}</h4>
-                                <p>{selectedCategory&&selectedCategory.desc}
+                                <p>{selectedCategory&&selectedCategory.description}
                                 </p>
                             </div>):<CategoryLoader/>}
                         </div>
                         <ProductItem products ={selectedCategory&&selectedCategory.products} loading={loading}/>
+
                     </div>
                 </div>
             </div>

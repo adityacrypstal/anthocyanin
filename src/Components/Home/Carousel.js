@@ -22,9 +22,9 @@ const Carousel = () => {
                     {
                         carousels ? carousels.map((data, i) => (
                             <div className={`carousel-item ${i == 0 ? 'active' : ''}`} key ={i}>
-                                <img src={data.mobileImage} className="mobile_view img-fluid"
+                                <img src={data.image} className="mobile_view img-fluid"
                                      alt="slider_1"/>
-                                <img src={data.webImage} className="desktop_view img-fluid"
+                                <img src={data.image} className="desktop_view img-fluid"
                                      alt="slider_1 /"/>
                                 <div className="container banner-caption">
                                     <div className="carousel-caption">
@@ -32,7 +32,7 @@ const Carousel = () => {
                                             <span>{data.subtitle}</span></h3>
                                         <a href={data.href}>
                                             Read our story
-                                            <img src="/assets/images/linkicon-white.png" alt="slider icons"/>
+                                            <img src="./assets/images/linkicon-white.png" alt="slider icons"/>
                                         </a>
                                     </div>
                                 </div>

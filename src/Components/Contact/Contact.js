@@ -1,6 +1,36 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
+import contactAction from '../../redux/Contact/actions';
+import swal from 'sweetalert';
 
 const Contact = () => {
+    const [state, setState] = React.useState({first_name:'',last_name:'',email:'',phone_number:'',message:''})
+
+    function handlechange(e) {
+        setState({
+            ...state,
+            [e.target.name]:e.target.value
+        })
+    }
+    function validate(){
+        return state.first_name!==''&&state.last_name!==''&&state.email!==''&&state.phone_number!==''&&state.message!=='';
+    }
+    const dispatch = useDispatch()
+    function submit() {
+        if(validate()){
+            dispatch(contactAction.submit(state))
+        }else{
+            swal({
+                title: "Oops",
+                text: "Please Fill All Fields!",
+                icon: "error",
+                buttons:false,
+                timer:2000
+            });
+
+        }
+    }
+
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -23,7 +53,7 @@ const Contact = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <img className="img-fluid" src="/assets/images/about.png" alt="Chania" />
+                            <img className="img-fluid" src="./assets/images/about.png" alt="Chania" />
                         </div>
                     </div>
 
@@ -45,39 +75,39 @@ const Contact = () => {
                                     <div className="row">
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control mb-30" name="name" id="name"
-                                                       placeholder="First Name" required="" />
+                                                <input type="text" className="form-control mb-30" name="first_name" id="name"
+                                                       placeholder="First Name" required="" value={state.first_name} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control mb-30" name="name"
+                                                <input type="text" className="form-control mb-30" name="last_name"
                                                        id="name-2"
-                                                       placeholder="Last Name" required="" />
+                                                       placeholder="Last Name" required="" value={state.last_name} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
                                                 <input type="email" className="form-control mb-30" name="email"
                                                        id="email"
-                                                       placeholder="E-mail" required="" />
+                                                       placeholder="E-mail" required="" value={state.email} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control mb-30" name="subject"
+                                                <input type="text" className="form-control mb-30" name="phone_number"
                                                        id="subject"
-                                                       placeholder="Your Number" />
+                                                       placeholder="Your Number" value={state.phone_number} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-group">
                                         <textarea name="message" className="form-text-area mb-30" id="message" cols="30"
-                                                  rows="6" placeholder="Your Message *" required=""></textarea>
+                                                  rows="6" placeholder="Your Message *" required="" value={state.message} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-md-12 d-flex justify-content-end">
-                                            <button className="btn">Send</button>
+                                            <button className="btn" onClick={()=>submit()}>Send</button>
                                         </div>
                                     </div>
                                 </div>

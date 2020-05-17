@@ -3,12 +3,12 @@ import actions from './actions';
 import datas from './data.json'
 
 import {createBrowserHistory} from "history";
-
+import config from '../../config';
 const history = createBrowserHistory()
 
 const listTechnologies = async (requestOptions, actionName) =>
     await fetch(
-        `google.cmo`, requestOptions
+        `${config.API_URL}/api/cms/get_technologies`, requestOptions
     )
         .then(res => res.json())
         .then(res => res)
@@ -20,11 +20,11 @@ export function* getTechnologies() {
         yield put({
             type: actions.LOADING
         });
-        // const {data, error} = yield call(
-        //     listTechnologies
-        // );
-        const data = datas;
-        const error = null
+        const {data, error} = yield call(
+            listTechnologies
+        );
+        // const data = datas;
+        // const error = null;
         if (data) {
             yield put({
                 type: actions.UPDATE_TECHNOLOGIES,

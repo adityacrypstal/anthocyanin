@@ -1,9 +1,8 @@
 const actions = {
-    GET_CONTACTS: 'GET_CONTACTS',
-    UPDATE_CONTACTS: 'UPDATE_CONTACTS',
+    SUBMIT_CONTACT: 'SUBMIT_CONTACT',
     LOADING: 'LOADING',
-    getcontacts: () => ({
-        type: actions.GET_CONTACTS
+    submit: (data) => ({
+        type: actions.SUBMIT_CONTACT,payload:data
     })
 }
 export default actions;

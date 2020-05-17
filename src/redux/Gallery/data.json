@@ -2,15 +2,15 @@
   "title": "OUR GALLERY",
   "subtitle": "We promote organic farming and have strong supply chain of organic raw material.",
   "link": "/news",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 },{
   "title": "OUR NEWS",
   "subtitle": "We promote organic farming and",
   "link": "/news",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 },{
   "title": "OUR BLOG",
   "subtitle": "We promote organic farming and have strong supply chain of organic raw material. Lorem ipsum testimg hhere.....",
   "link": "/news",
-  "img": "/assets/images/gallery.png"
+  "img": "./assets/images/gallery.png"
 }]

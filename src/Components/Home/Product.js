@@ -8,13 +8,12 @@ import ProductLoader from '../../Helpers/ProductLoader'
 
 const Product = () => {
     const {initialCategory, categories,loading} = useSelector(state => state.categories);
-    console.log(loading,'loading');
     const dispatch = useDispatch();
     React.useEffect(() => {
             dispatch(categoryAction.getCategories());
     }, [dispatch, initialCategory]);
     const truncate = (str) =>{
-        return str.length > 60 ? str.substring(0, 56) + "..." : str;
+        if(str) return str.length > 60 ? str.substring(0, 56) + "..." : str;
     }
     return (
         <section className="products">
@@ -26,17 +25,17 @@ const Product = () => {
                 <div className="mt-20" id="products-slider">
                     <div className="">
                         <div className="w-100">
-                            {categories && loading ? (
+                            {categories.length ? (
                                     <OwlCarousel items={4} className="owl-carousel owl-theme products-slider-wapper">
                                         {categories.map((data, i) => (
                                             <div className="item" key={i}>
                                                 <div>
-                                                    <img src={data.img} className="img-fluid" alt="product_1"/>
+                                                    <img src={data.image} className="img-fluid" alt="product_1"/>
                                                     <h3>{data.title}</h3>
-                                                    <p>{truncate(data.desc)}</p>
+                                                    <p>{truncate(data.description)}</p>
                                                 </div>
 
-                                                <a href={data.href}>MORE</a>
+                                                <a href={`/category/${data.id}`}>MORE</a>
                                             </div>
                                         ))}
                                     </OwlCarousel>) :

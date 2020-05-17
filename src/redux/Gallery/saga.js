@@ -2,12 +2,14 @@ import {all, takeEvery, put, call, take} from 'redux-saga/effects';
 import actions from './actions';
 import datas from './data.json';
 import {createBrowserHistory} from "history";
-
+import config from '../../config'
 const history = createBrowserHistory()
 
-const listGallery = async (requestOptions, actionName) =>
+
+
+const listGallery = async (requestOptions) =>
     await fetch(
-        `google.cmo`, requestOptions
+        `${config.API_URL}/api/cms/get_galleries`
     )
         .then(res => res.json())
         .then(res => res)
@@ -19,11 +21,11 @@ export function* getGallery() {
         yield put({
             type: actions.LOADING
         });
-        // const {data, error} = yield call(
-        //     listGallery
-        // );
-        const data = datas;
-        const error = null;
+        const {data, error} = yield call(
+            listGallery
+        );
+        // const data = datas;
+        // const error = null;
         if (data) {
             yield put({
                 type: actions.UPDATE_GALLERY,

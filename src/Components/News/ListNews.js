@@ -34,7 +34,7 @@ const ListNews = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <img className="img-fluid" src="/assets/images/about.png" alt="Chania" />
+                            <img className="img-fluid" src="./assets/images/about.png" alt="Chania" />
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const ListNews = () => {
                                 {news&&!loading ? news.map((data,i)=>(
                                     <div className="news-list">
                                         <div className="card post-items">
-                                            <img className="card-img-top img-fluid" src={data.img}
+                                            <img className="card-img-top img-fluid" src={data.image}
                                                  alt="Card image"
                                                  style={{width:'100%'}} />
                                             <div className="card-body">
@@ -62,7 +62,7 @@ const ListNews = () => {
                                                 <h4 className="card-title"><a href=""> {data.subtitle}<span> {data.title}</span></a>
                                                 </h4>
                                                 <p className="card-text">
-                                                   {data.desc}
+                                                   {data.description}
                                                 </p>
                                                 <a href="#" className="btn-more">Readmore</a>
                                             </div>

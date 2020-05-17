@@ -2,13 +2,21 @@ import {all, takeEvery, put, call, take} from 'redux-saga/effects';
 import actions from './actions';
 import datas from './data.json';
 import {createBrowserHistory} from "history";
+
+import config from'../../config'
+const history = createBrowserHistory()
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
-const history = createBrowserHistory()
-
-const listCategories = async (requestOptions, actionName) =>
+const listCategories = async (requestOptions) =>
     await fetch(
-        `google.cmo`, requestOptions
+        `${config.API_URL}/api/cms/get_product_categories`, requestOptions
+    )
+        .then(res => res.json())
+        .then(res => res)
+        .catch(error => error);
+const getCategoryItem = async (id) =>
+    await fetch(
+        `${config.API_URL}//api/cms/get_products/${id}`
     )
         .then(res => res.json())
         .then(res => res)
@@ -20,12 +28,12 @@ export function* getCategories() {
         yield put({
             type: actions.LOADING
         });
-        // const {data, error} = yield call(
-        //     listCategories
-        // );
-        yield call(delay,2000)
-        const data = datas;
-        const error = null;
+        const {data, error} = yield call(
+            listCategories
+        );
+        // yield call(delay,2000)
+        // const data = datas;
+        // const error = null;
         if (data) {
             yield put({
                 type: actions.UPDATE_CATEGORIES,
@@ -47,13 +55,14 @@ export function* getCategory({payload}) {
         yield put({
             type: actions.LOADING
         });
-        // const {data, error} = yield call(
-        //     listCategories
-        // );
+        const {data, error} = yield call(
+            getCategoryItem,
+            payload.id
+        );
         yield call(delay, 2000);
 
-        const data = datas.find(data =>data.id=payload.id);
-        const error = null;
+        // const data = datas.find(data =>data.id=payload.id);
+        // const error = null;
         if (data) {
             yield put({
                 type: actions.PUT_CATEGORY,
