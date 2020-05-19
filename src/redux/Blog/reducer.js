@@ -19,6 +19,13 @@ export default function blogReducer(state = initState, {type, payload, ...action
                 initialBlog: true
             };
         }
+        case actions.PUT_BLOG: {
+            return {
+                ...state,
+                selectedBlog: action.blog,
+                loading: false
+            };
+        }
         case actions.LOADING:
             return {
                 ...state,

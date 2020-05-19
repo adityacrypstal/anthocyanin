@@ -2377,3 +2377,9 @@ footer p {
         margin-right: 10px;
     }
 }
+.white{
+    color: white;
+}
+.white:hover{
+    color: grey;
+}

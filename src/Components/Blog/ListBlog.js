@@ -59,13 +59,13 @@ const ListBlog = () => {
                                     <div className="card-body">
                                         <div className="d-flex written">
                                 <span>
-                                    by <a href="https://jevelin.shufflehound.com/author/shufflehound/">
+                                    by <a href="#">
                                         {data.author || 'Author'} </a>
                                 </span>
                                             <a href="#">{moment(data.created_at).format('DD-MM-YYYY')}</a>
 
                                         </div>
-                                        <h4 className="card-title"><a href=""> {data.subtitle}<span> {data.title}</span></a>
+                                        <h4 className="card-title"><a href={`/blog/${data.id}`}> {data.subtitle}<span> {data.title}</span></a>
                                         </h4>
                                         <Markup
                                             content={'<p><u><br></u></p><p><u>Abstract Photography:</u></p><p><b style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">Abstract photography</b><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">, sometimes called non-objective, experimental, conceptual or concrete&nbsp;</span><b style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">photography</b><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">, is a means of depicting a visual image that does not have an immediate association with the object world and that has been created through the use of photographic equipment, processes or materials</span></p><p><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\"><br></span>&nbsp; &nbsp;</p><h2 style=\\"text-align: justify; padding: 0px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; line-height: normal; width: 630px; background-color: rgb(235, 235, 235);\\"><br></h2>'}/>

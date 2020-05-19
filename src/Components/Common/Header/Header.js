@@ -112,8 +112,8 @@ const Header = () => {
                                     <span data-toggle="dropdown">PRODUCTS</span>
                                     <div className="dropdown-menu">
                                         {
-                                            categories&&categories.map((data)=>(
-                                                <NavLink className="dropdown-item" key={data} to={`/category/${data.id}`}>{data.title}</NavLink>
+                                            categories&&categories.map((data,i)=>(
+                                                <NavLink key={i} className="dropdown-item" key={data} to={`/category/${data.id}`}>{data.title}</NavLink>
                                             ))
                                         }
                                     </div>
