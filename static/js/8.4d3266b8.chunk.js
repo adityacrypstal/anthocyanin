@@ -1,0 +1,2 @@
+webpackJsonp([8],{171:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var u=t(0),r=t.n(u),a=function(){return r.a.createElement("div",null,"News")};n.default=a}});
+//# sourceMappingURL=8.4d3266b8.chunk.js.map
