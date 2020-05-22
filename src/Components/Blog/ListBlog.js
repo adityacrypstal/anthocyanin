@@ -51,11 +51,14 @@ const ListBlog = () => {
                     </div>
                     <div className="row mx-0">
                         {blogs.length ? blogs.map((data, i) => (
-                            <div className="col-md-4">
-                                <div className="card post-items" key={i}>
-                                    <img className="card-img-top img-fluid" src={data.title_image}
-                                         alt="Card image"
-                                         style={{width: '100%'}}/>
+                            <div className="col-md-4" key={i}>
+                                <div className="card post-items" >
+                                    {/*<img className="card-img-top img-fluid" src={data.title_image}*/}
+                                    {/*     alt="Card image"*/}
+                                    {/*     style={{width: '100%'}}/>*/}
+                                    <div className={'card-img-custom'} style={{backgroundImage:`url(${data.title_image})`}}>
+
+                                    </div>
                                     <div className="card-body">
                                         <div className="d-flex written">
                                 <span>
@@ -65,10 +68,10 @@ const ListBlog = () => {
                                             <a href="#">{moment(data.created_at).format('DD-MM-YYYY')}</a>
 
                                         </div>
-                                        <h4 className="card-title"><a href={`/blog/${data.id}`}> {data.subtitle}<span> {data.title}</span></a>
+                                        <h4 className="card-title blog-head"><a href={`/blog/${data.id}`}> {data.subtitle}<span> {data.title}</span></a>
                                         </h4>
                                         <Markup
-                                            content={'<p><u><br></u></p><p><u>Abstract Photography:</u></p><p><b style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">Abstract photography</b><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">, sometimes called non-objective, experimental, conceptual or concrete&nbsp;</span><b style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">photography</b><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\">, is a means of depicting a visual image that does not have an immediate association with the object world and that has been created through the use of photographic equipment, processes or materials</span></p><p><span style=\\"color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;\\"><br></span>&nbsp; &nbsp;</p><h2 style=\\"text-align: justify; padding: 0px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; line-height: normal; width: 630px; background-color: rgb(235, 235, 235);\\"><br></h2>'}/>
+                                            content={'<p>Contrary toVFinry of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>'}/>
 
 
                                     </div>

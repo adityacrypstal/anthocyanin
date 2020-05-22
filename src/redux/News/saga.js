@@ -49,12 +49,12 @@ export function* getRecent() {
         yield put({
             type: actions.LOADING_RECENT
         });
-        // const {data, error} = yield call(
-        //     listNews
-        // );
-        yield call(delay, 2000)
-        const data = recent;
-        const error = null
+        const {data, error} = yield call(
+            listNews
+        )
+        // yield call(delay, 2000)
+        // const data = recent;
+        // const error = null
         if (data) {
             yield put({
                 type: actions.UPDATE_RECENT,

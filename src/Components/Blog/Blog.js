@@ -19,15 +19,32 @@ const Blog = () => {
     console.log(selectedBlog, 'testing');
     return (
         <div>
+            <div className="breadcrumb-wapper">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h3><span>Anthocyanin</span>
+                                Sense of Essence</h3>
+                        </div>
+                        <div className="col-md-6">
+                            <nav className="breadcrumb">
+                                <a className="breadcrumb-item" href="#">Home</a>
+                                <span className="breadcrumb-item ">Blog</span>
+                                <span className="breadcrumb-item active">{selectedBlog?selectedBlog.title:'TITLE'}</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {selectedBlog ? (
                 <div>
                     <div className="container">
                         <div className="row mt-5">
-                                <h1>{selectedBlog.title}</h1>
+                                <h4>{selectedBlog.title}</h4>
                         </div>
                         <div className="row">
-                            <div className={'float-left author'}>AUTHOR : <i>{selectedBlog.author||'ADMIN'}</i></div> ||
-                            <div className={'float-right posted'}>POSTED ON : <i>{moment(selectedBlog.created_at).format('Do MMMM YYYY')}</i></div>
+                            <div className={'float-left author pl-0 mt-2'}>AUTHOR : <i>{selectedBlog.author||'ADMIN'}</i></div>
+                            <div className={'float-right posted  pl-0 mt-2'}>POSTED ON : <i>{moment(selectedBlog.created_at).format('Do MMMM YYYY')}</i></div>
                         </div>
                         <div className="row">
                             <Markup content = {selectedBlog.content}></Markup>

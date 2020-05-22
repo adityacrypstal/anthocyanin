@@ -1,13 +1,12 @@
 .author{
     font-weight:bolder;
     color:slategray;
-    padding: 0px 10px;
 }
 .posted{
     font-weight:bolder;
     color:slategray;
     float: right;
-    padding: 0px 10px;
+    margin-left: 20px;
 }
 .author i{
     font-weight: lighter;

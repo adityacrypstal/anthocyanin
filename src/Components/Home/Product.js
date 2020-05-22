@@ -5,6 +5,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import {useDispatch, useSelector} from "react-redux";
 import categoryAction from '../../redux/Category/actions';
 import ProductLoader from '../../Helpers/ProductLoader'
+import './style.css'
 
 const Product = () => {
     const {initialCategory, categories,loading} = useSelector(state => state.categories);
@@ -40,7 +41,7 @@ const Product = () => {
                     <div className="">
                         <div className="w-100">
                             {categories.length ? (
-                                    <OwlCarousel  className="owl-carousel owl-theme products-slider-wapper" responsive={owl}>
+                                    <OwlCarousel  className="owl-carousel owl-theme products-slider-wapper owl-item" responsive={owl}>
                                         {categories.map((data, i) => (
                                             <div className="item" key={i}>
                                                 <div>

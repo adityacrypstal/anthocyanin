@@ -4,20 +4,23 @@ import {createBrowserHistory} from "history";
 import {useParams, useRouteMatch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import categoryAction from "../../../redux/Category/actions";
-
+import $ from 'jquery'
 const mobileLogo = `${process.env.PUBLIC_URL}/assets/images/mob-logo.png`
 const webLogo = `${process.env.PUBLIC_URL}/assets/images/logo.png`;
 const Hamburger = `${process.env.PUBLIC_URL}/assets/images/ham.png`;
 const history = createBrowserHistory()
 const Header = () => {
-    const {loading,initialCategory, categories} = useSelector(state => state.categories);
+    const {loading, initialCategory, categories} = useSelector(state => state.categories);
+    const [toggleFlag,setToggle] = React.useState(false)
     const dispatch = useDispatch();
     React.useEffect(() => {
         if (!initialCategory) {
             dispatch(categoryAction.getCategories());
         }
     }, [dispatch, initialCategory]);
-    console.log(categories);
+    const toggle = () =>{
+        setToggle(!toggleFlag)
+    };
     return (
         <header>
             <div className="container">
@@ -25,15 +28,17 @@ const Header = () => {
                     <div className="mobile-header">
                         <img src={mobileLogo} className="img-fluid"/>
                         <div id="remenu-icon">
-                            <img src={Hamburger} className="img-fuid"/>
+                            <img src={Hamburger} className="img-fuid" onClick={()=>toggle()}/>
                         </div>
                     </div>
 
-                    <div id="remenu-list">
+                    <div id="remenu-list" style={{display:`${toggleFlag?'block':'none'}`}}>
                         <ul className="nav nav-bar ">
-                            <NavLink to={'/'}>
-                                <li className="active">Home</li>
-                            </NavLink>
+                            <li className="active">
+                                <NavLink to={'/'}>
+                                    Home
+                                </NavLink>
+                            </li>
                             <li className="">
                                 <span data-toggle="dropdown">ABOUT US</span>
                                 <div className="dropdown-menu">
@@ -50,25 +55,34 @@ const Header = () => {
                                 <span data-toggle="dropdown">PRODUCTS</span>
                                 <div className="dropdown-menu">
                                     {
-                                        categories&&categories.forEach((data)=>(
-                                            <NavLink className="dropdown-item" key={data} to={`/category/${data.id}`}>{data.title}</NavLink>
+                                        categories && categories.map((data, i) => (
+                                            <NavLink key={i} className="dropdown-item"
+                                                     to={`/category/${data.id}`}>{data.title}</NavLink>
                                         ))
                                     }
                                 </div>
 
                             </li>
-                            <NavLink to={'/researches'}>
-                                <li className="test">R & D</li>
-                            </NavLink>
-                            <NavLink to={'/news'}>
-                                <li className="test">NEWS & EVENTS</li>
-                            </NavLink>
-                            <NavLink to={'/blog'}>
-                                <li className="test">BLOG</li>
-                            </NavLink>
-                            <NavLink to={'/contact'}>
-                                <li className="test">CONTACT US</li>
-                            </NavLink>
+                            <li className="test">
+                                <NavLink to={'/researches'}>
+                                    R & D
+                                </NavLink>
+                            </li>
+                            <li className="test">
+                                <NavLink to={'/news'}>
+                                    NEWS & EVENTS
+                                </NavLink>
+                            </li>
+                            <li className="test">
+                                <NavLink to={'/blog'}>
+                                    BLOG
+                                </NavLink>
+                            </li>
+                            <li className="test">
+                                <NavLink to={'/contact'}>
+                                    CONTACT US
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -90,9 +104,11 @@ const Header = () => {
                         </div>
                         <nav className="mt-20 main-nav">
                             <ul className="nav nav-bar ">
-                                <NavLink to={'/'}>
-                                    <li className="active">Home</li>
-                                </NavLink>
+                                <li className="active">
+                                    <NavLink to={'/'}>
+                                        Home
+                                    </NavLink>
+                                </li>
                                 <li className="">
                                     <div className="dropdown">
                                         <span id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -112,25 +128,34 @@ const Header = () => {
                                     <span data-toggle="dropdown">PRODUCTS</span>
                                     <div className="dropdown-menu">
                                         {
-                                            categories&&categories.map((data,i)=>(
-                                                <NavLink key={i} className="dropdown-item" key={data} to={`/category/${data.id}`}>{data.title}</NavLink>
+                                            categories && categories.map((data, i) => (
+                                                <NavLink key={i} className="dropdown-item"
+                                                         to={`/category/${data.id}`}>{data.title}</NavLink>
                                             ))
                                         }
                                     </div>
 
                                 </li>
-                                <NavLink to={'/researches'}>
-                                    <li className="test">R & D</li>
-                                </NavLink>
-                                <NavLink to={'/news'}>
-                                    <li className="test">NEWS & EVENTS</li>
-                                </NavLink>
-                                <NavLink to={'/blog'}>
-                                    <li className="test">BLOG</li>
-                                </NavLink>
-                                <NavLink to={'/contact'}>
-                                    <li className="test">CONTACT US</li>
-                                </NavLink>
+                                <li className="test">
+                                    <NavLink to={'/researches'}>
+                                        R & D
+                                    </NavLink>
+                                </li>
+                                <li className="test">
+                                    <NavLink to={'/news'}>
+                                        NEWS & EVENTS
+                                    </NavLink>
+                                </li>
+                                <li className="test">
+                                    <NavLink to={'/blog'}>
+                                        BLOG
+                                    </NavLink>
+                                </li>
+                                <li className="test">
+                                    <NavLink to={'/contact'}>
+                                        CONTACT US
+                                    </NavLink>
+                                </li>
                             </ul>
                         </nav>
                     </div>

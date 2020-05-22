@@ -16,13 +16,13 @@ const Recent = () => {
                 {recent&&!loadingRecent ? recent.map((data,i)=>(
                     <li className="d-flex" key={i}>
                         <div className="re-post">
-                            <img src={data.img} alt="" />
+                            <img src={data.image} alt="" />
                         </div>
                         <div className="re-consent">
                             <h4>{data.title}</h4>
                             <p className="d-flex">
                                 <span className="recent-posts__date">{data.date}</span>
-                                <span className="recent-posts__views">{data.views} views</span>
+                                {/*<span className="recent-posts__views">{data.views} views</span>*/}
                             </p>
                         </div>
                     </li>

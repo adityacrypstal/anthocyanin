@@ -262,7 +262,7 @@ p {
     background: transparent !important;
 }
 
-.main-nav li.active a,
+.main-nav li a.active,
 .main-nav li a:hover {
     color: var(--main-color);
 }
@@ -378,7 +378,7 @@ div#minslider .carousel-caption a img {
     padding: 25px;
     margin: 0px !important;
     display: flex;
-
+    flex:1;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -720,7 +720,7 @@ section.Quality-list figure figcaption span {
 
 .pro-listing h3 {
     font-family: "s-bold";
-    font-size: 24px;
+    font-size: 16px;
     text-align: left;
     color: #f5c412;
     margin-bottom: 10px;
@@ -2332,9 +2332,9 @@ footer p {
         margin-top: 0;
     }
 
-    .dropdown-menu.show a:first-child {
-        display: none !Important;
-    }
+    /*.dropdown-menu.show a:first-child {*/
+    /*    display: none !Important;*/
+    /*}*/
 
     .dropdown-menu.show a {
         border: none !important;
@@ -2382,4 +2382,14 @@ footer p {
 }
 .white:hover{
     color: grey;
+}
+.blog-head{
+    margin-top:15px;margin-bottom:15px;
+}
+.card-img-custom{
+    background-size:cover;
+    background-position: center;
+    height: 150px;
+    background-repeat:no-repeat;
+    width:100%;
 }

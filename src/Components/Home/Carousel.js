@@ -22,7 +22,7 @@ const Carousel = () => {
                     {
                         carousels ? carousels.map((data, i) => (
                             <div className={`carousel-item ${i == 0 ? 'active' : ''}`} key ={i}>
-                                <img src={data.image} className="mobile_view img-fluid"
+                                <img src={'./assets/images/mob_slider_1.png'} className="mobile_view img-fluid"
                                      alt="slider_1"/>
                                 <img src={data.image} className="desktop_view img-fluid"
                                      alt="slider_1 /"/>

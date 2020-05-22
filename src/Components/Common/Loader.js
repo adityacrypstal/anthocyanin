@@ -10,7 +10,7 @@ const Loader = ({loading}) => {
                 color="#478b19"
                 height={100}
                 width={100}
-                style={{marginTop:"20%",marginLeft:'45%'}}
+                style={{marginTop:"200px",marginLeft:'43%'}}
 
             />
         </div>
