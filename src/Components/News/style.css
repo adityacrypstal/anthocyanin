@@ -1,0 +1,20 @@
+.author{
+    font-weight:bolder;
+    color:slategray;
+}
+.posted{
+    font-weight:bolder;
+    color:slategray;
+    float: right;
+    margin-left: 20px;
+}
+.author i{
+    font-weight: lighter;
+    color: black;opacity: 0.5;
+}
+.posted i{
+    font-weight: lighter;
+    color: black;opacity: 0.5;
+}
+h1{text-transform: capitalize}
+h1::first-letter{font-weight: 900}

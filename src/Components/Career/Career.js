@@ -10,53 +10,64 @@ class Career extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        age: '',
-        city: '',
-        country: ''
+        phone: '',
+        currentAddress: '',
+        permanentAddress: '',
+        gender: 'male',
+        citizen: '',
+        motherTongue: '',
+        town:'',
+        district:'',
+        state:'',
+        religon: '',
+        language: '',
+        image: ''
     }
     nextStep = () => {
-        const { step } = this.state
+        const {step} = this.state
         this.setState({
-            step : step + 1
+            step: step + 1
         })
     }
 
     prevStep = () => {
-        const { step } = this.state
+        const {step} = this.state
         this.setState({
-            step : step - 1
+            step: step - 1
         })
     }
 
-    handleChange = input => event => {
-        this.setState({ [input] : event.target.value })
+    handleChange =  event => {
+        this.setState({[event.target.name]: event.target.value})
     }
+
     render() {
         const {step} = this.state;
-        const { firstName, lastName, email, age, city, country } = this.state;
-        const values = { firstName, lastName, email, age, city, country };
-        switch(step) {
+        switch (step) {
             case 1:
                 return <PageOne
                     nextStep={this.nextStep}
-                    handleChange = {this.handleChange}
-                    values={values}
+                    handleChange={this.handleChange}
+                    values={this.state}
                 />
             case 2:
                 return <PageTwo
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    values={values}
+                    handleChange={this.handleChange}
+                    values={this.state}
                 />
             case 3:
                 return <PageThree
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    values={values}
+                    values={this.state}
                 />
             case 4:
-                return <Success />
+                return <Success
+                    prevStep={this.prevStep}
+                    submit={this.submit}
+                    values={this.state}/>
         }
     }
 }

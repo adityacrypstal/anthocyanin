@@ -64,7 +64,7 @@ const ListNews = () => {
                                                 <p className="card-text">
                                                    {data.description}
                                                 </p>
-                                                <a href="#" className="btn-more">Readmore</a>
+                                                <a href={`/news/${data.id}`} className="btn-more">Readmore</a>
                                             </div>
                                         </div>
                                     </div>
