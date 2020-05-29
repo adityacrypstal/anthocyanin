@@ -2393,3 +2393,6 @@ footer p {
     background-repeat:no-repeat;
     width:100%;
 }
+.nav-bar li:last-child{
+    padding-right: 0;
+}

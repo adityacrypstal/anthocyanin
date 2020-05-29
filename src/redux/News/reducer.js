@@ -38,6 +38,13 @@ export default function newsReducer(state = initState, {type, payload, ...action
                 ...state,
                 loadingRecent: true
             };
+        case actions.SELECTED_NEWS: {
+            return {
+                ...state,
+                selectedNews: action.news[0],
+                loading: false
+            };
+        }
         default:
             return state;
     }

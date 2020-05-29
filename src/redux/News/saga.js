@@ -7,9 +7,16 @@ import config from '../../config'
 
 const history = createBrowserHistory()
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
-const listNews = async (requestOptions, actionName) =>
+const listNews = async (requestOptions) =>
     await fetch(
         `${config.API_URL}/api/cms/get_news`, requestOptions
+    )
+        .then(res => res.json())
+        .then(res => res)
+        .catch(error => error);
+const listNewsID = async (id) =>
+    await fetch(
+        `${config.API_URL}//api/cms/get_news/${id}`
     )
         .then(res => res.json())
         .then(res => res)
@@ -36,6 +43,35 @@ export function* getNews() {
         } else {
             yield put({
                 type: actions.UPDATE_NEWS,
+                news: [],
+            });
+        }
+        if (error) throw error;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export function* getNewsId({payload}) {
+    try {
+        yield put({
+            type: actions.LOADING
+        });
+        const {data, error} = yield call(
+            listNewsID,
+            payload.id
+        )
+        // const data = datas;
+        // const error = null;
+        // yield call(delay, 2000)
+
+        if (data) {
+            yield put({
+                type: actions.SELECTED_NEWS,
+                news: data,
+            });
+        } else {
+            yield put({
+                type: actions.SELECTED_NEWS,
                 news: [],
             });
         }
@@ -75,6 +111,7 @@ export function* getRecent() {
 export default function* rootSaga() {
     yield all([
         yield takeEvery(actions.GET_NEWS, getNews),
+        yield takeEvery(actions.GET_NEWS_BY_ID, getNewsId),
         yield takeEvery(actions.GET_RECENT, getRecent)
     ]);
 }

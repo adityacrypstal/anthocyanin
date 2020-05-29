@@ -1,7 +1,7 @@
 import React from 'react';
 import {useParams, useRouteMatch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import blogsAction from "../../redux/Blog/actions";
+import newsAction from "../../redux/News/actions";
 import Loader from "../Common/Loader";
 import {Markup} from "interweave";
 import moment from "moment";
@@ -10,14 +10,14 @@ import './style.css'
 const News = () => {
     const match = useRouteMatch();
     const {id} = useParams() || 0
-    const {loading, selectedBlog} = useSelector(state => state.blogs);
+    const {loading, selectedNews} = useSelector(state => state.news);
     const dispatch = useDispatch();
     React.useEffect(() => {
         if (id) {
-            dispatch(blogsAction.getBlog(id));
+            dispatch(newsAction.getNewsId(id));
         }
     }, [dispatch, id]);
-    console.log(selectedBlog, 'testing');
+    console.log(selectedNews, 'testing');
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -31,24 +31,24 @@ const News = () => {
                             <nav className="breadcrumb">
                                 <a className="breadcrumb-item" href="#">Home</a>
                                 <span className="breadcrumb-item ">Blog</span>
-                                <span className="breadcrumb-item active">{selectedBlog?selectedBlog.title:'TITLE'}</span>
+                                <span className="breadcrumb-item active">{selectedNews?selectedNews.title:'TITLE'}</span>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
-            {selectedBlog ? (
+            {selectedNews ? (
                 <div>
                     <div className="container">
                         <div className="row mt-5">
-                            <h4>{selectedBlog.title}</h4>
+                            <h4><span className={'float-left author pr-1'}>{selectedNews.subtitle} </span> {selectedNews.title}</h4>
                         </div>
                         <div className="row">
-                            <div className={'float-left author pl-0 mt-2'}>AUTHOR : <i>{selectedBlog.author||'ADMIN'}</i></div>
-                            <div className={'float-right posted  pl-0 mt-2'}>POSTED ON : <i>{moment(selectedBlog.created_at).format('Do MMMM YYYY')}</i></div>
+                            <img src={selectedNews.image} alt=""/>
                         </div>
+                        <br/>
                         <div className="row">
-                            <Markup content = {selectedBlog.content}></Markup>
+                            <p>{selectedNews.description}</p>
                         </div>
                     </div>
                 </div>

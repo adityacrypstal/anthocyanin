@@ -21,7 +21,51 @@ class Career extends Component {
         state:'',
         religon: '',
         language: '',
-        image: ''
+        image: '',
+        marital:"",
+        no_children:"",
+        spouse_name:"",
+        physical_challenges:"",
+        epidemic:"",
+        allergic:"",
+        mother_name:"",
+        father_name:"",
+        mother_address:"",
+        father_address:"",
+        s10_mark:"",
+        s10_percent:"",
+        s10_clg:"",
+        s10_passingout:"",
+        s12_mark:"",
+        s12_percent:"",
+        s12_clg:"",
+        s12_passingout:"",
+        degree_mark:"",
+        degree_percent:"",
+        degree_clg:"",
+        degree_passingout:"",
+        refer_person:"",
+        refer_contact:"",
+        employment:[
+            {
+                company_name:"",
+                company_period:"",
+                comapny_designation:"",
+                company_keyresponsibility:""
+            },
+            {
+                company_name:"",
+                company_period:"",
+                comapny_designation:"",
+                company_keyresponsibility:""
+            },
+            {
+                company_name:"",
+                company_period:"",
+                comapny_designation:"",
+                company_keyresponsibility:""
+            }
+        ]
     }
     nextStep = () => {
         const {step} = this.state
