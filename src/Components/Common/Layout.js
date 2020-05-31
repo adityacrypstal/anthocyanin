@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Header from "./Header/Header";
 import Footer from "./Footer";
+import { withRouter } from "react-router-dom";
+
 class Layout extends Component {
     render() {
         return (
@@ -13,4 +15,4 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+export default withRouter(Layout);

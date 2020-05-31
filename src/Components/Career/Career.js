@@ -5,6 +5,7 @@ import PageThree from "./Form/PageThree";
 import Success from "./Form/Success";
 
 class Career extends Component {
+
     state = {
         step: 1,
         firstName: '',
@@ -16,56 +17,48 @@ class Career extends Component {
         gender: 'male',
         citizen: '',
         motherTongue: '',
-        town:'',
-        district:'',
-        state:'',
+        town: '',
+        district: '',
+        state: '',
         religon: '',
         language: '',
-        image: '',
-        marital:"",
-        no_children:"",
-        spouse_name:"",
-        physical_challenges:"",
-        epidemic:"",
-        allergic:"",
-        mother_name:"",
-        father_name:"",
-        mother_address:"",
-        father_address:"",
-        s10_mark:"",
-        s10_percent:"",
-        s10_clg:"",
-        s10_passingout:"",
-        s12_mark:"",
-        s12_percent:"",
-        s12_clg:"",
-        s12_passingout:"",
-        degree_mark:"",
-        degree_percent:"",
-        degree_clg:"",
-        degree_passingout:"",
-        refer_person:"",
-        refer_contact:"",
-        employment:[
-            {
-                company_name:"",
-                company_period:"",
-                comapny_designation:"",
-                company_keyresponsibility:""
-            },
-            {
-                company_name:"",
-                company_period:"",
-                comapny_designation:"",
-                company_keyresponsibility:""
-            },
-            {
-                company_name:"",
-                company_period:"",
-                comapny_designation:"",
-                company_keyresponsibility:""
-            }
-        ]
+        file:null,
+        marital: "married",
+        no_children: "",
+        spouse_name: "",
+        physical_challenges: "",
+        epidemic: "",
+        allergic: "",
+        mother_name: "",
+        father_name: "",
+        mother_address: "",
+        father_address: "",
+        s10_mark: "",
+        s10_percent: "",
+        s10_clg: "",
+        s10_passingout: "",
+        s12_mark: "",
+        s12_percent: "",
+        s12_clg: "",
+        s12_passingout: "",
+        degree_mark: "",
+        degree_percent: "",
+        degree_clg: "",
+        degree_passingout: "",
+        refer_person: "",
+        refer_contact: "",
+        company_name1: "",
+        company_period: "",
+        comapny_designation: "",
+        company_keyresponsibility1: "",
+        company_name2: "",
+        company_period2: "",
+        comapny_designation2: "",
+        company_keyresponsibility2: "",
+        company_name3: "",
+        company_period3: "",
+        comapny_designation3: "",
+        company_keyresponsibility3: "",
     }
     nextStep = () => {
         const {step} = this.state
@@ -81,10 +74,12 @@ class Career extends Component {
         })
     }
 
-    handleChange =  event => {
+    handleChange = event => {
         this.setState({[event.target.name]: event.target.value})
     }
-
+    fileChange = (event) =>{
+            this.setState({ file: event.target.files[0] });
+    }
     render() {
         const {step} = this.state;
         switch (step) {
@@ -93,6 +88,7 @@ class Career extends Component {
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     values={this.state}
+                    fileChange ={this.fileChange}
                 />
             case 2:
                 return <PageTwo
@@ -104,12 +100,14 @@ class Career extends Component {
             case 3:
                 return <PageThree
                     nextStep={this.nextStep}
+                    handleChange={this.handleChange}
                     prevStep={this.prevStep}
                     values={this.state}
                 />
             case 4:
                 return <Success
                     prevStep={this.prevStep}
+                    handleChange={this.handleChange}
                     submit={this.submit}
                     values={this.state}/>
         }

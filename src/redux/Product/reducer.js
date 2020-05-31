@@ -5,6 +5,7 @@ const initState = {
     loading: false,
     initialProduct: false,
     selectedProduct: null,
+    currentProduct:{},
     totalCount: 0
 };
 
@@ -23,6 +24,11 @@ export default function productReducer(state = initState, {type, payload, ...act
             return {
                 ...state,
                 loading: true
+            };
+        case actions.SET_PRODUCT:
+            return {
+                ...state,
+                currentProduct: action.product
             };
         default:
             return state;

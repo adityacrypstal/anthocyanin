@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import careerAction from "../../redux/Career/actions";
-import Loader from "../Common/Loader";
+import { useHistory } from "react-router-dom";
 import CareerLoader from "../../Helpers/CareerLoader";
 
 const ListCareers = () => {
@@ -12,6 +12,7 @@ const ListCareers = () => {
             dispatch(careerAction.getCareers());
         }
     }, [dispatch, initialCareer]);
+    const history = useHistory();
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -62,7 +63,7 @@ const ListCareers = () => {
                                         <p className="country">{data.country}</p>
                                     </div>
                                     <div className="apply-btn">
-                                        <a href="/career/1" className="btn" role="button">VIEW AND APPLY</a>
+                                        <a onClick={()=>history.push(`/career/${data.id}`)} className="btn" role="button">VIEW AND APPLY</a>
                                     </div>
                                 </li>
                             )):(<div>

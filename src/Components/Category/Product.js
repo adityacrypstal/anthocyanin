@@ -1,6 +1,17 @@
 import React from 'react';
+import {useSelector} from "react-redux";
+import {Markup} from "interweave";
+import { useHistory } from "react-router-dom";
+import categoryAction from "../../redux/Category/actions";
 
 const Product = () => {
+    const history = useHistory();
+    const {currentProduct} = useSelector(state => state.products);
+    console.log(currentProduct);
+    if(!Object.keys(currentProduct).length){
+        console.log("going bavk");
+        history.go('-1')
+    }
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -26,47 +37,13 @@ const Product = () => {
                         <div className="pro-item">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <div className="teamImg" style={{background: 'url("/assets/images/spices2.png")'}}>
+                                    <div className="teamImg" style={{background: `url("${currentProduct.image}")`}}>
                                     </div>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="ourteam-txt ">
-                                        <h4 className="header-title"><span>Black pepper </span> Oleoresin</h4>
-                                        <ul>
-                                            <li>Black pepper has been deemed the “King of spices”, it has been a
-                                                very popular spice for seasoning and flavouring.
-                                            </li>
-                                            <li>Black pepper belongs to the family of piperaceae, cultivated for its
-                                                fruit,
-                                                known as pepper corn.
-                                            </li>
-                                            <li>Black pepper oleoresin is obtained by the solvent extraction of
-                                                ground-dried
-                                                ripened seed of black pepper.
-                                            </li>
-                                            <li>The flavour is slightly warm and pleasant initially, followed by a
-                                                pungent,
-                                                biting sensation.
-                                            </li>
-                                            <li>Its spiciness is due to the chemical compound piperine.</li>
-                                            <li>According to Ayurveda, black pepper is excellent for folk medicines to
-                                                cure
-                                                several illness, such as constipation, insomnia, oral abscesses,
-                                                sunburn,
-                                                and
-                                                toothache.
-                                            </li>
-                                            <li>Black pepper is a very versatile house hold spice for Asians since
-                                                ancient
-                                                times
-                                                to enhance the flavour of savoury dishes.
-                                            </li>
-                                            <li>It can also use as a tasty seasoning for cooked vegetables, pasta,
-                                                dishes,
-                                                meat,
-                                                fish, poultry and many more.
-                                            </li>
-                                        </ul>
+                                        <h4 className="header-title"><span>{currentProduct.subtitle} </span> {currentProduct.title}</h4>
+                                        <Markup content = {currentProduct.description}></Markup>
                                     </div>
                                 </div>
                             </div>

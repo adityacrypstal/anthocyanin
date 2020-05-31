@@ -1,13 +1,14 @@
 import React, {Component, lazy, Suspense} from 'react';
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
-import {createBrowserHistory} from "history";
+// import {createBrowserHistory} from "history";
 import {Provider} from 'react-redux';
 import Layout from "../Components/Common/Layout";
 import {store} from '../redux/store'
 import PageNotFound from "../Components/Common/PageNotFound";
 import Loader from "../Components/Common/Loader";
+import history from "./history";
 
-const browserHistory = createBrowserHistory({ queryKey: false, basename:process.env.PUBLIC_URL })
+// const browserHistory = createBrowserHistory({ queryKey: false, basename:process.env.PUBLIC_URL })
 const routes = [
     {
         path: '/',
@@ -88,9 +89,9 @@ class Container extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter history={browserHistory} basename={process.env.PUBLIC_URL}>
-                    <Suspense fallback={<Loader loading ={true}/>}>
+                <BrowserRouter history={history} basename={process.env.PUBLIC_URL} >
                         <Switch>
+                            <Suspense fallback={<Loader loading ={true}/>}>
                             {routes.map((route, idx) => (
                                 <Route exact={route.exact} key={idx} path={`${route.path}`}>
                                     <Layout>
@@ -99,8 +100,8 @@ class Container extends Component {
                                 </Route>
                             ))}
                             <Route component={PageNotFound}/>
+                            </Suspense>
                         </Switch>
-                    </Suspense>
                 </BrowserRouter>
             </Provider>
         );

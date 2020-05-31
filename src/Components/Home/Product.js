@@ -8,26 +8,28 @@ import ProductLoader from '../../Helpers/ProductLoader'
 import './style.css'
 
 const Product = () => {
-    const {initialCategory, categories,loading} = useSelector(state => state.categories);
+    const {initialCategory, categories, loading} = useSelector(state => state.categories);
     const dispatch = useDispatch();
     React.useEffect(() => {
-            dispatch(categoryAction.getCategories());
+        dispatch(categoryAction.getCategories());
     }, [dispatch, initialCategory]);
-    const truncate = (str) =>{
-        if(str) return str.length > 60 ? str.substring(0, 56) + "..." : str;
+    const truncate = (str) => {
+        str = str.toString();
+        str = str.replace(/<\/?[^>]+>/gi, '');
+        if (str) return str.length > 60 ? str.substring(0, 56) + "..." : str;
     }
     const owl = {
         0: {
             items: 1,
-            dots:true
+            dots: true
         },
         480: {
             items: 2,
-            dots:true
+            dots: true
         },
         768: {
             items: 4,
-            dots:false
+            dots: false
         }
     }
     return (
@@ -41,7 +43,8 @@ const Product = () => {
                     <div className="">
                         <div className="w-100">
                             {categories.length ? (
-                                    <OwlCarousel  className="owl-carousel owl-theme products-slider-wapper owl-item" responsive={owl}>
+                                    <OwlCarousel className="owl-carousel owl-theme products-slider-wapper owl-item"
+                                                 responsive={owl}>
                                         {categories.map((data, i) => (
                                             <div className="item" key={i}>
                                                 <div>
@@ -55,13 +58,14 @@ const Product = () => {
                                         ))}
                                     </OwlCarousel>) :
                                 <OwlCarousel responsive={owl} className="owl-carousel owl-theme products-slider-wapper">
-                                    <div className="item" >
-                                        <ProductLoader />
+                                    <div className="item">
+                                        <ProductLoader/>
                                     </div>
-                                    <div className="item" >
-                                        <ProductLoader />
-                                    </div>  <div className="item" >
-                                        <ProductLoader />
+                                    <div className="item">
+                                        <ProductLoader/>
+                                    </div>
+                                    <div className="item">
+                                        <ProductLoader/>
                                     </div>
                                     <div className="item">
                                         <ProductLoader/>

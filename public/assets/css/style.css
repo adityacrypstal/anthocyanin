@@ -2396,3 +2396,16 @@ footer p {
 .nav-bar li:last-child{
     padding-right: 0;
 }
+footer a{
+    color:white;
+    text-decoration: none;
+    font-weight: normal;
+}
+footer a:hover{
+    color:white;
+    text-decoration: initial;
+    font-weight: normal;
+}
+.hover{
+    cursor:pointer;
+}

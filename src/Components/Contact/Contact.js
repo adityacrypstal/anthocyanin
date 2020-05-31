@@ -4,28 +4,31 @@ import contactAction from '../../redux/Contact/actions';
 import swal from 'sweetalert';
 
 const Contact = () => {
-    const [state, setState] = React.useState({first_name:'',last_name:'',email:'',phone_number:'',message:''})
+    const [state, setState] = React.useState({first_name: '', last_name: '', email: '', phone_number: '', message: ''})
 
     function handlechange(e) {
         setState({
             ...state,
-            [e.target.name]:e.target.value
+            [e.target.name]: e.target.value
         })
     }
-    function validate(){
-        return state.first_name!==''&&state.last_name!==''&&state.email!==''&&state.phone_number!==''&&state.message!=='';
+
+    function validate() {
+        return state.first_name !== '' && state.last_name !== '' && state.email !== '' && state.phone_number !== '' && state.message !== '';
     }
+
     const dispatch = useDispatch()
+
     function submit() {
-        if(validate()){
+        if (validate()) {
             dispatch(contactAction.submit(state))
-        }else{
+        } else {
             swal({
                 title: "Oops",
                 text: "Please Fill All Fields!",
                 icon: "error",
-                buttons:false,
-                timer:2000
+                buttons: false,
+                timer: 2000
             });
 
         }
@@ -53,7 +56,7 @@ const Contact = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <img className="img-fluid" src="./assets/images/about.png" alt="Chania" />
+                            <img className="img-fluid" src="./assets/images/about.png" alt="Chania"/>
                         </div>
                     </div>
 
@@ -75,39 +78,45 @@ const Contact = () => {
                                     <div className="row">
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control mb-30" name="first_name" id="name"
-                                                       placeholder="First Name" required="" value={state.first_name} onChange={handlechange}/>
+                                                <input type="text" className="form-control mb-30" name="first_name"
+                                                       id="name"
+                                                       placeholder="First Name" required="" value={state.first_name}
+                                                       onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
                                                 <input type="text" className="form-control mb-30" name="last_name"
                                                        id="name-2"
-                                                       placeholder="Last Name" required="" value={state.last_name} onChange={handlechange}/>
+                                                       placeholder="Last Name" required="" value={state.last_name}
+                                                       onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
                                                 <input type="email" className="form-control mb-30" name="email"
                                                        id="email"
-                                                       placeholder="E-mail" required="" value={state.email} onChange={handlechange}/>
+                                                       placeholder="E-mail" required="" value={state.email}
+                                                       onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-6">
                                             <div className="form-group">
                                                 <input type="text" className="form-control mb-30" name="phone_number"
                                                        id="subject"
-                                                       placeholder="Your Number" value={state.phone_number} onChange={handlechange}/>
+                                                       placeholder="Your Number" value={state.phone_number}
+                                                       onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-group">
                                         <textarea name="message" className="form-text-area mb-30" id="message" cols="30"
-                                                  rows="6" placeholder="Your Message *" required="" value={state.message} onChange={handlechange}/>
+                                                  rows="6" placeholder="Your Message *" required=""
+                                                  value={state.message} onChange={handlechange}/>
                                             </div>
                                         </div>
                                         <div className="col-md-12 d-flex justify-content-end">
-                                            <button className="btn" onClick={()=>submit()}>Send</button>
+                                            <button className="btn" onClick={() => submit()}>Send</button>
                                         </div>
                                     </div>
                                 </div>
@@ -119,9 +128,10 @@ const Contact = () => {
                                             </div>
                                             <div className="txt-box">
                                                 <h3>Our head office address</h3>
-                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                                    nonumy
-                                                    eirmodtempor invidunt ut labore </p>
+                                                <p>Anthocyanin Group<br></br>
+                                                    Kolenchery<br></br>
+                                                    Ernakulam, Kerala<br></br>
+                                                    India - 682311</p>
                                             </div>
                                         </div>
 
@@ -130,8 +140,8 @@ const Contact = () => {
                                                 <i className="fa fa-phone"></i>
                                             </div>
                                             <div className="txt-box">
-                                                <h3>Call Us On</h3>
-                                                <p>Dummy@gmail.com</p>
+                                                <h3>Email Us At</h3>
+                                                <p>info@anthocyanin.in</p>
                                             </div>
                                         </div>
 
@@ -140,8 +150,8 @@ const Contact = () => {
                                                 <i className="fa fa-envelope"></i>
                                             </div>
                                             <div className="txt-box">
-                                                <h3>Email Us At</h3>
-                                                <p>+91 XXX XXX XXX</p>
+                                                <h3>Call Us On</h3>
+                                                <p>+91 492 3296200, +91 492 3296201</p>
                                             </div>
                                         </div>
                                     </div>

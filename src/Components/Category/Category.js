@@ -3,8 +3,9 @@ import {useRouteMatch, useParams} from 'react-router-dom';
 import ProductItem from "./ProductItem";
 import {useDispatch, useSelector} from "react-redux";
 import categoryAction from "../../redux/Category/actions";
-import CareerLoader from "../../Helpers/CareerLoader";
+import { withRouter } from "react-router-dom";
 import CategoryLoader from "../../Helpers/categoryLoader";
+import {Markup} from "interweave";
 
 const Category = () => {
     const match = useRouteMatch();
@@ -41,8 +42,7 @@ const Category = () => {
                         <div className="col-md-12 ">
                             {selectedCategory&&!loading ? (<div className="product-header">
                                 <h4 className="header-title">{selectedCategory&&selectedCategory.title}</h4>
-                                <p>{selectedCategory&&selectedCategory.description}
-                                </p>
+                                {selectedCategory?<Markup content = {selectedCategory.description}></Markup>:null}
                             </div>):<CategoryLoader/>}
                         </div>
                         <ProductItem products ={selectedCategory&&selectedCategory.products} loading={loading}/>
@@ -54,4 +54,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default withRouter(Category);

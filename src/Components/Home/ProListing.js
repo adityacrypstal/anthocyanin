@@ -32,7 +32,7 @@ const ProListing = () => {
         <section className="pro-listing">
             <div className="container">
                 <div className="row">
-                    {news.length ? (
+                    {loading ? (
                             <OwlCarousel responsive={owl} className="owl-carousel owl-theme products-slider-wapper">
                                 {news.map((data, i) => (
                                     <div className="item" key={i}>

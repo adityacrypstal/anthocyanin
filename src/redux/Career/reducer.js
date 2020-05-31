@@ -24,6 +24,16 @@ export default function careerReducer(state = initState, {type, payload, ...acti
                 ...state,
                 loading: true
             };
+        case actions.APPLYING:
+            return {
+                ...state,
+                applying: true
+            };
+        case actions.APPLIED:
+            return {
+                ...state,
+                applying: false
+            };
         default:
             return state;
     }

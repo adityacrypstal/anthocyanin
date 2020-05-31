@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import technologyActions from "../../redux/Technologies/actions";
 import Loader from "../Common/Loader";
+import {Markup} from "interweave";
 
 const Technology = () => {
     const {initialTechnology, technologies} = useSelector(state => state.technologies);
@@ -27,7 +28,7 @@ const Technology = () => {
                                         <div className="carousel-caption text-left">
                                             <h3><span>{data.title}</span>
                                                 {data.subtitle}</h3>
-                                            <p>{data.description}</p>
+                                            <Markup content = {data.description}></Markup>
                                         </div>
                                     </div>
                                 </div>
