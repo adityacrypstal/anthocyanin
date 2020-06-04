@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import categoryAction from '../../redux/Category/actions';
 import ProductLoader from '../../Helpers/ProductLoader'
 import './style.css'
+import {useHistory} from "react-router-dom";
 
 const Product = () => {
     const {initialCategory, categories, loading} = useSelector(state => state.categories);
@@ -32,6 +33,7 @@ const Product = () => {
             dots: false
         }
     }
+    const history = useHistory();
     return (
         <section className="products">
             <div className="container">
@@ -53,7 +55,7 @@ const Product = () => {
                                                     <p>{truncate(data.description)}</p>
                                                 </div>
 
-                                                <a href={`/category/${data.id}`}>MORE</a>
+                                                <a onClick={()=>history.push(`/category/${data.id}`)}>MORE</a>
                                             </div>
                                         ))}
                                     </OwlCarousel>) :

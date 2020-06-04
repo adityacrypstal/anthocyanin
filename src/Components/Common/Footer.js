@@ -1,5 +1,6 @@
 import React from 'react';
-const logo = `${process.env.PUBLIC_URL}/assets/images/footer-logo.png`;
+
+const logo = `${process.env.PUBLIC_URL}/assets/images/footer-logo.svg`;
 const Footer = () => {
     return (
         <div>
@@ -7,14 +8,14 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
-                            <img src={logo} className="img-fluid footer-logo" alt="footer logo" />
+                            <img src={logo} className="footer-logo" alt="footer logo"/>
                         </div>
                         <div className="col-md-3">
-                            <h5>Head Office</h5>
+                            <h5>Office Address</h5>
                             <p><a>Anthocyanin Group<br></br>
-                                Kolenchery<br></br>
-                                Ernakulam, Kerala<br></br>
-                                India - 682311</a></p>
+                                Plot No -43 <br></br>Kinfra Mega Food Park<br></br>
+                                Palakkad, Kerala<br></br>
+                                India - 678557</a></p>
                         </div>
 
                         <div className="col-md-3">
@@ -22,8 +23,8 @@ const Footer = () => {
                             <ul>
                                 <li><a href={'/#'}>About Us</a></li>
                                 <li><a href={'/overview'}>Overview</a></li>
-                                <li><a href={'/#'}>Vision and Mission</a></li>
-                                <li><a href={'/#'}>Our Team</a></li>
+                                <li><a href={'/facilities'}>Facilities</a></li>
+                                <li><a href={'/team'}>Our Team</a></li>
                                 <li><a href={'/contact'}>Contact Us</a></li>
                             </ul>
                         </div>

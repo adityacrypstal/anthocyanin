@@ -5,7 +5,7 @@ import {useParams, withRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import categoryAction from "../../../redux/Category/actions";
 const mobileLogo = `${process.env.PUBLIC_URL}/assets/images/mob-logo.png`
-const webLogo = `${process.env.PUBLIC_URL}/assets/images/logo.png`;
+const webLogo = `${process.env.PUBLIC_URL}/assets/images/header-logo.svg`;
 const Hamburger = `${process.env.PUBLIC_URL}/assets/images/ham.png`;
 const history = createBrowserHistory()
 const Header = () => {
@@ -42,10 +42,10 @@ const Header = () => {
                                 <span data-toggle="dropdown">ABOUT US</span>
                                 <div className="dropdown-menu">
                                     <NavLink className="dropdown-item" to={'/overview'}>Overview</NavLink>
-                                    <NavLink className="dropdown-item"
-                                             to={'/overview'}>CERTIFICATIONS</NavLink>
-                                    <NavLink className="dropdown-item" to={'/overview'}>FACILITIES</NavLink>
-                                    <NavLink className="dropdown-item" to={'/overview'}>TEAM</NavLink>
+                                    {/*<NavLink className="dropdown-item"*/}
+                                    {/*         to={'/overview'}>CERTIFICATIONS</NavLink>*/}
+                                    <NavLink className="dropdown-item" to={'/facilities'}>FACILITIES</NavLink>
+                                    <NavLink className="dropdown-item" to={'/team'}>TEAM</NavLink>
 
                                 </div>
 
@@ -86,16 +86,15 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-box d-flex">
-                    <a href="index.html" className="logo">
-                        <img src={webLogo} alt="logo" className="img-fluid"/>
+                    <a href="/" className="logo">
+                        <img src={webLogo} alt="logo" className="img-fluid logo-img"/>
                     </a>
 
 
                     <div className="main-menu">
                         <div className="top-nav mt-30">
                             <ul className="nav nav-bar d-flex">
-                                <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 492 3296200</a></li>
-                                <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 492 3296201</a></li>
+                                <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 492 3296200, +91 492 3296201</a></li>
                                 <li className="mr-50"><a href="#mailto:"><span>MAIL</span>info@anthocyanin.in</a></li>
                                 <NavLink to={'/careers'}>
                                     <li><span className="m-0">CAREER</span></li>
@@ -115,10 +114,10 @@ const Header = () => {
                                               aria-expanded="false">ABOUT US</span>
                                         <div className="dropdown-menu">
                                             <NavLink className="dropdown-item" to={'/overview'}>Overview</NavLink>
-                                            <NavLink className="dropdown-item"
-                                                     to={'/overview'}>CERTIFICATIONS</NavLink>
-                                            <NavLink className="dropdown-item" to={'/overview'}>FACILITIES</NavLink>
-                                            <NavLink className="dropdown-item" to={'/overview'}>TEAM</NavLink>
+                                            {/*<NavLink className="dropdown-item"*/}
+                                            {/*         to={'/overview'}>CERTIFICATIONS</NavLink>*/}
+                                            <NavLink className="dropdown-item" to={'/facilities'}>FACILITIES</NavLink>
+                                            <NavLink className="dropdown-item" to={'/team'}>TEAM</NavLink>
 
                                         </div>
 

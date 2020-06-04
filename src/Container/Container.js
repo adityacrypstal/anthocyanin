@@ -99,7 +99,7 @@ class Container extends Component {
                                     </Layout>
                                 </Route>
                             ))}
-                            <Route component={PageNotFound}/>
+                            {/*<Route component={PageNotFound}/>*/}
                             </Suspense>
                         </Switch>
                 </BrowserRouter>

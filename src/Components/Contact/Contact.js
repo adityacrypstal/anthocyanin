@@ -63,13 +63,11 @@ const Contact = () => {
                     <div className="contact-Box">
                         <div className="contact-Boxheader">
                             <h3>Get <span>InTouch</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt
-                                ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo
-                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                                dolor
-                                sit amet.
+                            <p>Our technology can be easily customized for our value added customers, provides quick and
+                                reliable service that meet their expectations and demands with the support of modern
+                                machinery and advanced processing facility. Our skilled R & D team constantly provide
+                                innovative solution and supports for the benefit of our clients with impeccable quality
+                                and cost effective products.
                             </p>
                         </div>
                         <div className="contact-form">
@@ -127,11 +125,11 @@ const Contact = () => {
                                                 <i className="fa fa-location-arrow"></i>
                                             </div>
                                             <div className="txt-box">
-                                                <h3>Our head office address</h3>
+                                                <h3>Office address</h3>
                                                 <p>Anthocyanin Group<br></br>
-                                                    Kolenchery<br></br>
-                                                    Ernakulam, Kerala<br></br>
-                                                    India - 682311</p>
+                                                    Plot No -43, Kinfra Mega Food Park<br></br>
+                                                    Palakkad, Kerala<br></br>
+                                                    India - 678557</p>
                                             </div>
                                         </div>
 

@@ -37,7 +37,7 @@ const Product = () => {
                         <div className="pro-item">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <div className="teamImg" style={{background: `url("${currentProduct.image}")`}}>
+                                    <div className="teamImg" style={{background: `url("${currentProduct.image}")`,backgroundSize:'cover',backgroundPosition:'center'}}>
                                     </div>
                                 </div>
                                 <div className="col-md-8">

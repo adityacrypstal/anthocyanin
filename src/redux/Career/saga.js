@@ -1,13 +1,9 @@
 import {all, takeEvery, put, call, take} from 'redux-saga/effects';
 import actions from './actions';
-import datas from './data.json'
+import {useHistory} from 'react-router-dom'
 import config from '../../config'
-import {createBrowserHistory} from "history";
 import swal from "sweetalert";
 
-const delay = time => new Promise(resolve => setTimeout(resolve, time));
-
-const history = createBrowserHistory()
 
 const listCareers = async () =>
     await fetch(
@@ -18,6 +14,7 @@ const listCareers = async () =>
         .catch(error => error);
 
 const applyCareer = async (requestOptions) =>
+
     await fetch(
         `${config.API_URL}/api/career/save_job_application`,
         requestOptions
@@ -30,17 +27,16 @@ const applyCareer = async (requestOptions) =>
                 buttons: false,
                 timer: 2000
             });
-            window.location('/careers')
+            window.location.href = '/careers'
         })
         .catch(error => {
             swal({
-                title: "Success",
-                text: "Thank You For Applying!",
-                icon: "success",
+                title: "Error",
+                text: "Something Went Wrong",
+                icon: "error",
                 buttons: false,
                 timer: 2000
             });
-            window.location('/careers')
         });
 
 
@@ -76,6 +72,7 @@ export function* applyCareers({payload}) {
         yield put({
             type: actions.APPLYING
         });
+
         const {data, error} = yield call(
             applyCareer,
             {body: getFormData(payload), method: 'POST'}
@@ -91,11 +88,13 @@ export function* applyCareers({payload}) {
         console.log(error)
     }
 }
+
 function getFormData(object) {
     const formData = new FormData();
     Object.keys(object).forEach(key => formData.append(key, object[key]));
     return formData;
 }
+
 export default function* rootSaga() {
     yield all([
         yield takeEvery(actions.GET_CAREERS, getCareers),

@@ -12,6 +12,8 @@ const ProListing = () => {
         dispatch(newsAction.getNews());
     }, [dispatch, initialNews]);
     const truncate = (str, l) => {
+        str = str.toString();
+        str = str.replace(/<\/?[^>]+>/gi, '');
         if (str) return str.length > l ? str.substring(0, l) + "..." : str;
     }
     const owl = {
@@ -33,7 +35,7 @@ const ProListing = () => {
             <div className="container">
                 <div className="row">
                     {loading ? (
-                            <OwlCarousel responsive={owl} className="owl-carousel owl-theme products-slider-wapper">
+                            <OwlCarousel responsive={owl} nav={false}className="owl-carousel owl-theme products-slider-wapper">
                                 {news.map((data, i) => (
                                     <div className="item" key={i}>
                                         <div>

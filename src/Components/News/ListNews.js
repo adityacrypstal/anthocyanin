@@ -12,6 +12,11 @@ const ListNews = () => {
             dispatch(newsActions.getNews());
         }
     }, [dispatch, initialNews]);
+    const truncate = (str, l) => {
+        str = str.toString();
+        str = str.replace(/<\/?[^>]+>/gi, '');
+        if (str) return str.length > l ? str.substring(0, l) + "..." : str;
+    }
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -62,7 +67,7 @@ const ListNews = () => {
                                                 <h4 className="card-title"><a href=""> {data.subtitle}<span> {data.title}</span></a>
                                                 </h4>
                                                 <p className="card-text">
-                                                   {data.description}
+                                                   {truncate(data.description,250)}
                                                 </p>
                                                 <a href={`/news/${data.id}`} className="btn-more">Readmore</a>
                                             </div>

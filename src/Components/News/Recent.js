@@ -11,7 +11,7 @@ const Recent = () => {
     }, [dispatch]);
     return (
         <div className="category recent">
-            <h5>Recent Posts</h5>
+            <h5>Recent News</h5>
             <ul>
                 {recent&&!loadingRecent ? recent.map((data,i)=>(
                     <li className="d-flex" key={i}>
