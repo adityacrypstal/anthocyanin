@@ -183,7 +183,7 @@ const Overview = () => {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="./assets/images/update1.png" />
+                                    <img className="card-img-top" src="./assets/images/update3.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>What we</span>
@@ -203,7 +203,7 @@ const Overview = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="./assets/images/update3.png" />
+                                    <img className="card-img-top" src="./assets/images/update4.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>What makes</span>
@@ -229,7 +229,7 @@ const Overview = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="card">
-                                    <img className="card-img-top" src="./assets/images/update4.png" />
+                                    <img className="card-img-top" src="./assets/images/update1.png" />
                                         <div className="card-body">
                                             <h4 className="header-title">
                                                 <span>Why</span>
