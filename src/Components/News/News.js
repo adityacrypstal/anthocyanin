@@ -29,8 +29,7 @@ const News = () => {
                         <div className="col-md-6">
                             <nav className="breadcrumb">
                                 <a className="breadcrumb-item" href="#">Home</a>
-                                <span className="breadcrumb-item ">Blog</span>
-                                <span className="breadcrumb-item active">{selectedNews?selectedNews.title:'TITLE'}</span>
+                                <span className="breadcrumb-item ">News</span>
                             </nav>
                         </div>
                     </div>
@@ -40,18 +39,20 @@ const News = () => {
                 <div>
                     <div className="container">
                         <div className="row mt-5">
-                            <h4><span className={'float-left author pr-1'}>{selectedNews.subtitle} </span> {selectedNews.title}</h4>
+                            <h4><span
+                                className={'float-left author pr-1'}>{selectedNews.subtitle}: </span> {selectedNews.title}
+                            </h4>
                         </div>
-                        <div className="row">
+                        <div className="row mt-1">
                             <img src={selectedNews.image} alt=""/>
                         </div>
                         <br/>
                         <div className="row">
-                            <p>{selectedNews.description}</p>
+                            <Markup content={selectedNews.description}></Markup>
                         </div>
                     </div>
                 </div>
-            ) : <section style={{height:'50vh'}}>
+            ) : <section style={{height: '50vh'}}>
                 <Loader/>
             </section>}
         </div>

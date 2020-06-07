@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import blogAction from "../../redux/Blog/actions";
 import Loader from "../Common/Loader";
+import {useHistory} from 'react-router-dom';
 import BlogLoader from "../../Helpers/blogLoader";
 import moment from 'moment';
 import {Markup} from 'interweave';
@@ -9,6 +10,7 @@ import {Markup} from 'interweave';
 const ListBlog = () => {
     const {initialBlog, blogs, loading} = useSelector(state => state.blogs);
     const dispatch = useDispatch();
+    const history = useHistory()
     React.useEffect(() => {
         if (!initialBlog) {
             dispatch(blogAction.getBlogs());
@@ -52,10 +54,7 @@ const ListBlog = () => {
                     <div className="row mx-0">
                         {blogs.length ? blogs.map((data, i) => (
                             <div className="col-md-4" key={i}>
-                                <div className="card post-items" >
-                                    {/*<img className="card-img-top img-fluid" src={data.title_image}*/}
-                                    {/*     alt="Card image"*/}
-                                    {/*     style={{width: '100%'}}/>*/}
+                                <div className="card post-items" onClick={()=>history.push(`/blog/${data.id}`)} >
                                     <div className={'card-img-custom'} style={{backgroundImage:`url(${data.title_image})`}}>
 
                                     </div>
@@ -68,12 +67,10 @@ const ListBlog = () => {
                                             <a href="#">{moment(data.created_at).format('DD-MM-YYYY')}</a>
 
                                         </div>
-                                        <h4 className="card-title blog-head"><a href={`/blog/${data.id}`}> {data.subtitle}<span> {data.title}</span></a>
+                                        <h4 className="card-title blog-head"><a href=""> {data.subtitle}<span> {data.title}</span></a>
                                         </h4>
                                         <Markup
-                                            content={'<p>Contrary toVFinry of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>'}/>
-
-
+                                            content={data.content}/>
                                     </div>
                                 </div>
                             </div>

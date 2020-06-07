@@ -4,20 +4,21 @@ import {createBrowserHistory} from "history";
 import {useParams, withRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import categoryAction from "../../../redux/Category/actions";
+
 const mobileLogo = `${process.env.PUBLIC_URL}/assets/images/mob-logo.png`
 const webLogo = `${process.env.PUBLIC_URL}/assets/images/header-logo.svg`;
 const Hamburger = `${process.env.PUBLIC_URL}/assets/images/ham.png`;
 const history = createBrowserHistory()
 const Header = () => {
     const {loading, initialCategory, categories} = useSelector(state => state.categories);
-    const [toggleFlag,setToggle] = React.useState(false)
+    const [toggleFlag, setToggle] = React.useState(false)
     const dispatch = useDispatch();
     React.useEffect(() => {
         if (!initialCategory) {
             dispatch(categoryAction.getCategories());
         }
     }, [dispatch, initialCategory]);
-    const toggle = () =>{
+    const toggle = () => {
         setToggle(!toggleFlag)
     };
     return (
@@ -27,11 +28,11 @@ const Header = () => {
                     <div className="mobile-header">
                         <img src={mobileLogo} className="img-fluid"/>
                         <div id="remenu-icon">
-                            <img src={Hamburger} className="img-fuid" onClick={()=>toggle()}/>
+                            <img src={Hamburger} className="img-fuid" onClick={() => toggle()}/>
                         </div>
                     </div>
 
-                    <div id="remenu-list" style={{display:`${toggleFlag?'block':'none'}`}}>
+                    <div id="remenu-list" style={{display: `${toggleFlag ? 'block' : 'none'}`}}>
                         <ul className="nav nav-bar ">
                             <li className="active">
                                 <NavLink to={'/'}>
@@ -94,8 +95,11 @@ const Header = () => {
                     <div className="main-menu">
                         <div className="top-nav mt-30">
                             <ul className="nav nav-bar d-flex">
-                                <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 492 3296200, +91 492 3296201</a></li>
-                                <li className="mr-50"><a href="#mailto:"><span>MAIL</span>info@anthocyanin.in</a></li>
+                                <li className="mr-50"><a href="#tel:"><span>CALL</span>+91 492 3296200, +91 492 3296201</a>
+                                </li>
+                                <li className="mr-50"><a href="#mailto:"
+                                                         style={{textTransform:"lowerCase"}}><span>MAIL</span>info@anthocyanin.in</a>
+                                </li>
                                 <NavLink to={'/careers'}>
                                     <li><span className="m-0">CAREER</span></li>
                                 </NavLink>

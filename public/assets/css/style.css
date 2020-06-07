@@ -2410,6 +2410,7 @@ footer a{
     color:white;
     text-decoration: none;
     font-weight: normal;
+    font-size:12px;
 }
 footer a:hover{
     color:white;

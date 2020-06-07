@@ -3,6 +3,7 @@ import Recent from "./Recent";
 import {useDispatch, useSelector} from "react-redux";
 import newsActions from "../../redux/News/actions";
 import NewsLoader from "../../Helpers/newsLoader";
+import {useHistory} from 'react-router-dom';
 
 const ListNews = () => {
     const {initialNews, news, loading} = useSelector(state => state.news);
@@ -12,6 +13,7 @@ const ListNews = () => {
             dispatch(newsActions.getNews());
         }
     }, [dispatch, initialNews]);
+    const history = useHistory();
     const truncate = (str, l) => {
         str = str.toString();
         str = str.replace(/<\/?[^>]+>/gi, '');
@@ -55,7 +57,7 @@ const ListNews = () => {
                             <div className="col-md-8">
                                 {news&&!loading ? news.map((data,i)=>(
                                     <div className="news-list">
-                                        <div className="card post-items">
+                                        <div className="card post-items" onClick={()=>history.push(`/news/${data.id}`)}>
                                             <img className="card-img-top img-fluid" src={data.image}
                                                  alt="Card image"
                                                  style={{width:'100%'}} />
@@ -69,7 +71,7 @@ const ListNews = () => {
                                                 <p className="card-text">
                                                    {truncate(data.description,250)}
                                                 </p>
-                                                <a href={`/news/${data.id}`} className="btn-more">Readmore</a>
+                                                <a href="" className="btn-more">Readmore</a>
                                             </div>
                                         </div>
                                     </div>

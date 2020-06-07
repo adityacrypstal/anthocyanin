@@ -29,7 +29,6 @@ const Blog = () => {
                             <nav className="breadcrumb">
                                 <a className="breadcrumb-item" href="#">Home</a>
                                 <span className="breadcrumb-item ">Blog</span>
-                                <span className="breadcrumb-item active">{selectedBlog?selectedBlog.title:'TITLE'}</span>
                             </nav>
                         </div>
                     </div>
@@ -38,7 +37,7 @@ const Blog = () => {
             {selectedBlog ? (
                 <div>
                     <div className="container">
-                        <div className="row mt-5">
+                        <div className="row mt-5" >
                                 <h4>{selectedBlog.title}</h4>
                         </div>
                         <div className="row">

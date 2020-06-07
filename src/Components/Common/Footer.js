@@ -12,7 +12,7 @@ const Footer = () => {
                         </div>
                         <div className="col-md-3">
                             <h5>Office Address</h5>
-                            <p><a>Anthocyanin Group<br></br>
+                            <p><a>Anthocyanin Naturals India Pvt Ltd<br></br>
                                 Plot No -43 <br></br>Kinfra Mega Food Park<br></br>
                                 Palakkad, Kerala<br></br>
                                 India - 678557</a></p>

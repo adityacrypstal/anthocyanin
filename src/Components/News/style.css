@@ -1,6 +1,7 @@
 .author{
     font-weight:bolder;
     color:slategray;
+    text-transform: uppercase;
 }
 .posted{
     font-weight:bolder;

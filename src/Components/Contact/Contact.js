@@ -126,7 +126,7 @@ const Contact = () => {
                                             </div>
                                             <div className="txt-box">
                                                 <h3>Office address</h3>
-                                                <p>Anthocyanin Group<br></br>
+                                                <p>Anthocyanin Naturals India Pvt Ltd<br></br>
                                                     Plot No -43, Kinfra Mega Food Park<br></br>
                                                     Palakkad, Kerala<br></br>
                                                     India - 678557</p>

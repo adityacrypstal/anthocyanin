@@ -16,7 +16,6 @@ const QualityList = () => {
 
                         <figure>
                             <img src="./assets/images/analytical.jpg" className="img-fluid" className="img-fluid" alt=""/>
-                            <figcaption><span>01.</span></figcaption>
                         </figure>
                     </div>
                     <div className="col-md-4 qualitycard">
@@ -29,7 +28,6 @@ const QualityList = () => {
 
                         <figure>
                             <img src="./assets/images/flag.jpg" className="img-fluid" className="img-fluid" alt=""/>
-                            <figcaption><span>02.</span></figcaption>
                         </figure>
                     </div>
                     <div className="col-md-4 qualitycard">
@@ -44,7 +42,6 @@ const QualityList = () => {
 
                         <figure>
                             <img src="./assets/images/labs.jpg" className="img-fluid" className="img-fluid" alt=""/>
-                            <figcaption><span>03.</span></figcaption>
                         </figure>
                     </div>
                 </div>

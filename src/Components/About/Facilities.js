@@ -34,16 +34,12 @@ const Facilities = () => {
                                     Facilities
                                 </h4>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 <div className="overview-list">
                                     <p>Our principal facility houses more than 1,50,000 square feet of state-of-the-art
                                         product development, quality control laboratories and manufacturing space. Our
                                         campus is designed & built specifically for producing world’s best Natural
                                         Extracts.</p>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="overview-list">
                                     <p>At Anthocyanin, our quality control department is well equipped with reputed
                                         Quality equipment’s & most modern analytical instruments and well qualified
                                         trained professionals. These may be customized as per your esteemed customer
