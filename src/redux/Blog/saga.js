@@ -4,7 +4,7 @@ import datas from './data.json'
 import {createBrowserHistory} from "history";
 import config from '../../config'
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
-console.log(process.env.NODE_ENV);
+console.log("Running in ->", process.env.NODE_ENV);
 const history = createBrowserHistory()
 
 const listBlogs = async (requestOptions, actionName) =>

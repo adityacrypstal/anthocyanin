@@ -283,7 +283,6 @@ module.exports = {
           // This message occurs for every build and is a bit too noisy.
           return;
         }
-        console.log(message);
       },
       minify: true,
       navigateFallback: publicUrl + '/index.html',

@@ -11,7 +11,6 @@ const Gallery = () => {
             dispatch(galleryAction.getGallery());
         }
     }, [dispatch, initialGallery]);
-    console.log(gallery);
     return (
         <section className="gallery">
             <div id="pro-listing" className="carousel slide carousel-fade" data-ride="carousel">

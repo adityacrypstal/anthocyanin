@@ -16,7 +16,6 @@ const Blog = () => {
             dispatch(blogsAction.getBlog(id));
         }
     }, [dispatch, id]);
-    console.log(selectedBlog, 'testing');
     return (
         <div>
             <div className="breadcrumb-wapper">

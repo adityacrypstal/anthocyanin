@@ -7,9 +7,7 @@ import categoryAction from "../../redux/Category/actions";
 const Product = () => {
     const history = useHistory();
     const {currentProduct} = useSelector(state => state.products);
-    console.log(currentProduct);
-    if(!Object.keys(currentProduct).length){
-        console.log("going bavk");
+    if(!Object.keys(currentProduct).length){;
         history.go('-1')
     }
     return (

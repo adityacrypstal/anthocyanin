@@ -17,7 +17,6 @@ const News = () => {
             dispatch(newsAction.getNewsId(id));
         }
     }, [dispatch, id]);
-    console.log(selectedNews, 'testing');
     return (
         <div>
             <div className="breadcrumb-wapper">
