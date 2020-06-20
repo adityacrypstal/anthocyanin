@@ -59,7 +59,7 @@ const PageOne = (props) => {
     return (
         <div className={'container'}>
             <Header one={'editing'}/>
-            <form className={'mx-5'}>
+            <form >
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-group">

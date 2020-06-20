@@ -20,7 +20,7 @@ const ProductItem = ({products}) => {
                     <div className="card post-items">
                         <img className="card-img-top img-fluid" src={data.image} alt="Card image" />
                         <div className="card-body">
-                            <h4 className="card-title"><a><span>{data.title}</span> {data.subtitle}</a></h4>
+                            <h4 className="card-title"><a><span>{data.title}</span> </a></h4>
                             <p className="card-text">
                                 {truncate(data.description)}
                             </p>

@@ -51,7 +51,7 @@ const PageTwo = (props) => {
         <div>
             <div className={'container'}>
                 <Header one={'done'} two={'editing'}/>
-                <form className={'mx-5 container'}>
+                <form className={'container'}>
                     <div className="row">
                         <div className="col-md-4">
                             <label htmlFor="exampleFormControlSelect1">Marital Status</label>

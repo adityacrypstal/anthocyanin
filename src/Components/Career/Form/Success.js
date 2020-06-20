@@ -41,7 +41,7 @@ const Success = (props) => {
     return (
         <div className={'container'}>
             <Header one={'done'} two={'done'} three={'done'} four={'editing'}/>
-            <form className={'mx-5 container'}>
+            <form className={'container'}>
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-group">

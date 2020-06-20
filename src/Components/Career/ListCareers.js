@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import careerAction from "../../redux/Career/actions";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import CareerLoader from "../../Helpers/CareerLoader";
 
 const ListCareers = () => {
@@ -35,25 +35,21 @@ const ListCareers = () => {
                 <div className="container">
                     <div className="inner-header">
                         <h3>Get your<span>Careers</span></h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt
-                            ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                            duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                            dolor
-                            sit amet.
+                        <p>Get your careers at Anthocyanin, the most preferred Indian exporter of spice Oleoresins and
+                            Essential oils by continual improvement in the business technology, up gradation and
+                            standardization of the product and process with international accredited standards.
                         </p>
                     </div>
                     <div className="open-positions">
                         <h3>Open Positions</h3>
                         <ul className="career-list">
-                            {careers&&!loading? careers.map((data,i)=>(
+                            {careers && !loading ? careers.map((data, i) => (
                                 <li className="d-flex">
                                     <div className="designation">
                                         <h4>
                                             <a href="">{data.title}</a>
                                         </h4>
-                                        {data.tags.map(tag=>(
+                                        {data.tags.map(tag => (
                                             <span className="designation-type">{tag}</span>
                                         ))}
 
@@ -63,18 +59,19 @@ const ListCareers = () => {
                                         <p className="country">{data.country}</p>
                                     </div>
                                     <div className="apply-btn">
-                                        <a onClick={()=>history.push(`/career/${data.id}`)} className="btn" role="button">VIEW AND APPLY</a>
+                                        <a onClick={() => history.push(`/career/${data.id}`)} className="btn"
+                                           role="button">VIEW AND APPLY</a>
                                     </div>
                                 </li>
-                            )):(<div>
+                            )) : (<div>
                                 <li className="d-flex">
-                                   <CareerLoader/>
+                                    <CareerLoader/>
                                 </li>
                                 <li className="d-flex">
-                                   <CareerLoader/>
+                                    <CareerLoader/>
                                 </li>
                                 <li className="d-flex">
-                                   <CareerLoader/>
+                                    <CareerLoader/>
                                 </li>
                             </div>)}
                         </ul>

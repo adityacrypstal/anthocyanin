@@ -2411,14 +2411,25 @@ footer a{
     text-decoration: none;
     font-weight: normal;
     font-size:12px;
+    text-transform: capitalize;
 }
 footer a:hover{
     color:white;
     text-decoration: initial;
     font-weight: normal;
+    text-transform: capitalize;
 }
 .hover{
     cursor:pointer;
 }
 .logo-img{width:47% !important;}
 .footer-logo{max-width:75% !important;}
+@media (max-width:767px){
+    .step-title,.step-optional{
+        display: none;
+    }
+    #remenu-list ul li a, span{
+        padding:0px !important;
+        border-bottom:none !important;
+    }
+}
