@@ -7,7 +7,7 @@ import Success from "./Form/Success";
 class Career extends Component {
 
     state = {
-        step: 1,
+        step: 4,
         firstName: '',
         lastName: '',
         email: '',
@@ -56,6 +56,8 @@ class Career extends Component {
         phd_passingout: "",
         refer_person: "",
         refer_contact: "",
+        refer_person2: "",
+        refer_contact2: "",
         company_name1: "",
         company_period: "",
         comapny_designation: "",
@@ -68,6 +70,11 @@ class Career extends Component {
         company_period3: "",
         comapny_designation3: "",
         company_keyresponsibility3: "",
+        company_exp1: "",
+        company_exp2: "",
+        company_exp3: "",
+        refer_person_position: "",
+        refer_person2_position: "",
     }
     nextStep = () => {
         const {step} = this.state

@@ -30,7 +30,7 @@ const Carousel = () => {
                                     <div className="carousel-caption">
                                         <h3>{data.title}
                                             <span>{data.subtitle}</span></h3>
-                                        <a href={data.href}>
+                                        <a href={'/category'}>
                                             Read our story
                                             <img src="./assets/images/linkicon-white.png" alt="slider icons"/>
                                         </a>

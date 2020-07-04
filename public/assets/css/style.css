@@ -2433,3 +2433,6 @@ footer a:hover{
         border-bottom:none !important;
     }
 }
+p{
+    text-align:justify!important;
+}

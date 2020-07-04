@@ -44,13 +44,13 @@ const ListCareers = () => {
                         <h3>Open Positions</h3>
                         <ul className="career-list">
                             {careers && !loading ? careers.map((data, i) => (
-                                <li className="d-flex">
+                                <li className="d-flex" key={i}>
                                     <div className="designation">
                                         <h4>
                                             <a href="">{data.title}</a>
                                         </h4>
-                                        {data.tags.map(tag => (
-                                            <span className="designation-type">{tag}</span>
+                                        {data.tags.map((tag,i) => (
+                                            <span key={i} className="designation-type">{tag}</span>
                                         ))}
 
                                     </div>

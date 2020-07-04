@@ -35,7 +35,7 @@ const PageOne = (props) => {
     const values =() =>{
         return props.values.firstName===''||props.values.lastName===''||props.values.currentAddress===''||props.values.permanentAddress===''||props.values.phone===''||
             props.values.email===''||props.values.citizen===''||props.values.motherTongue===''||props.values.town===''||props.values.district===''||
-            props.values.state===''||props.values.religon===''||props.values.language==='';
+            props.values.state===''||props.values.religon===''||props.values.language===''&&props.values.filename;
     }
     const next = () => {
         if (!values()){

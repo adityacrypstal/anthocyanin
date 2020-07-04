@@ -4,7 +4,7 @@ import contactAction from '../../redux/Contact/actions';
 import swal from 'sweetalert';
 
 const Contact = () => {
-    const [state, setState] = React.useState({first_name: '', last_name: '', email: '', phone_number: '', message: ''})
+    const [state, setState] = React.useState({first_name: '', last_name: '', email: '', phone_number: '', message: '', company:''})
 
     function handlechange(e) {
         setState({
@@ -103,6 +103,14 @@ const Contact = () => {
                                                 <input type="text" className="form-control mb-30" name="phone_number"
                                                        id="subject"
                                                        placeholder="Your Number" value={state.phone_number}
+                                                       onChange={handlechange}/>
+                                            </div>
+                                        </div>
+                                        <div className="col-12 col-lg-12">
+                                            <div className="form-group">
+                                                <input type="text" className="form-control mb-30" name="company"
+                                                       id="subject"
+                                                       placeholder="Your Company" value={state.company}
                                                        onChange={handlechange}/>
                                             </div>
                                         </div>
