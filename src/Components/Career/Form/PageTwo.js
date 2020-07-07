@@ -49,8 +49,8 @@ const PageTwo = (props) => {
     }
     return (
         <div>
+            <Header one={'done'} two={'editing'}/>
             <div className={'container'}>
-                <Header one={'done'} two={'editing'}/>
                 <form className={'container'}>
                     <div className="row">
                         <div className="col-md-4">
@@ -168,7 +168,7 @@ const PageTwo = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className={'my-5'}>
+                    <div className={'my-5 controller'}>
                         <button type="button" className="btn btn-light" onClick={() => props.prevStep()}>PREV</button>
                         <button type="button" className="btn btn-light" onClick={() => next()}>NEXT</button>
                     </div>

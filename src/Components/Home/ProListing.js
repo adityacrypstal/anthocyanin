@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import OwlCarousel from "react-owl-carousel";
 import ProductLoader from "../../Helpers/ProductLoader";
 import {useDispatch, useSelector} from "react-redux";
@@ -8,6 +9,7 @@ import NewsHomeLoader from "../../Helpers/NewsHomeLoader";
 const ProListing = () => {
     const {initialNews, news, loading} = useSelector(state => state.news);
     const dispatch = useDispatch();
+    const history = useHistory();
     React.useEffect(() => {
         dispatch(newsAction.getNews());
     }, [dispatch, initialNews]);
@@ -37,7 +39,7 @@ const ProListing = () => {
                     {loading ? (
                             <OwlCarousel responsive={owl} nav={false}className="owl-carousel owl-theme products-slider-wapper">
                                 {news.map((data, i) => (
-                                    <div className="item" key={i}>
+                                    <div className="item" key={i} onClick={()=>history.push(`/news/${data.id}`)}>
                                         <div>
                                             {/*<img src={data.image} className="img-fluid" alt="product_1"/>*/}
                                             {/*<p className={'mt-1'}>{data.subtitle}</p>*/}
@@ -45,7 +47,6 @@ const ProListing = () => {
                                             <p>{truncate(data.description, 56)}</p>
                                         </div>
 
-                                        <a href={`/news/${data.id}`} className={'white'}>MORE</a>
                                     </div>
                                 ))}
                             </OwlCarousel>) :

@@ -7,7 +7,7 @@ import Success from "./Form/Success";
 class Career extends Component {
 
     state = {
-        step: 4,
+        step: 1,
         firstName: '',
         lastName: '',
         email: '',
@@ -75,6 +75,7 @@ class Career extends Component {
         company_exp3: "",
         refer_person_position: "",
         refer_person2_position: "",
+        sign:null
     }
     nextStep = () => {
         const {step} = this.state
@@ -96,6 +97,9 @@ class Career extends Component {
     fileChange = (event) =>{
             this.setState({ file: event.target.files[0] });
     }
+    signChange = (event) =>{
+            this.setState({ sign: event.target.files[0] });
+    }
     render() {
         const {step} = this.state;
         switch (step) {
@@ -105,26 +109,27 @@ class Career extends Component {
                     handleChange={this.handleChange}
                     values={this.state}
                     fileChange ={this.fileChange}
-                />
+                />;
             case 2:
                 return <PageTwo
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     values={this.state}
-                />
+                />;
             case 3:
                 return <PageThree
                     nextStep={this.nextStep}
                     handleChange={this.handleChange}
                     prevStep={this.prevStep}
                     values={this.state}
-                />
+                />;
             case 4:
                 return <Success
                     prevStep={this.prevStep}
                     handleChange={this.handleChange}
                     submit={this.submit}
+                    signChange={this.signChange}
                     values={this.state}/>
         }
     }

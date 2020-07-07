@@ -16,9 +16,11 @@ const ListBlog = () => {
             dispatch(blogAction.getBlogs());
         }
     }, [dispatch, initialBlog]);
-    const truncate = (str) => {
-        if (str) return str.length > 60 ? str.substring(0, 56) + "..." : str;
-    }
+    const truncate = (str, i) => {
+        str = str.toString();
+        str = str.replace(/<\/?[^>]+>/gi, '');
+        if (str) return str.length > i ? str.substring(0, i) + "..." : str;
+    };
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -67,7 +69,7 @@ const ListBlog = () => {
                                             <a href="#">{moment(data.created_at).format('DD-MM-YYYY')}</a>
 
                                         </div>
-                                        <h4 className="card-title blog-head"><a href=""> {data.subtitle}<span> {data.title}</span></a>
+                                        <h4 className="card-title blog-head"><a href=""> {truncate(data.subtitle, 30)}<span> {truncate(data.title, 50)}</span></a>
                                         </h4>
                                         <Markup
                                             content={data.content}/>

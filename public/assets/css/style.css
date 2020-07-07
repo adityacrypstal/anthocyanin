@@ -2436,3 +2436,25 @@ footer a:hover{
 p{
     text-align:justify!important;
 }
+.apply-btn a{
+    white-space: nowrap !important;
+    margin-left: 20px !important;
+}
+@media(max-width:767px){
+    .open-positions ul li{
+        flex-direction: column;
+    }
+    .apply-btn a{
+        margin-left: 0px !important;
+        margin-top: 15px;
+        width: 100%;
+    }
+    .location{
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: solid 1px #ccc;
+    }
+}
+.controller button{
+    margin-left:10px !important;
+}
