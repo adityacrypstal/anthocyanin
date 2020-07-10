@@ -20,14 +20,14 @@ const applyCareer = async (requestOptions) =>
         requestOptions
     )
         .then(res => {
-            // swal({
-            //     title: "Success",
-            //     text: "Thank You For Applying!",
-            //     icon: "success",
-            //     buttons: false,
-            //     timer: 2000
-            // });
-            // window.location.href = '/careers'
+            swal({
+                title: "Success",
+                text: "Thank You For Applying!",
+                icon: "success",
+                buttons: false,
+                timer: 2000
+            });
+            window.location.href = '/careers'
         })
         .catch(error => {
             swal({

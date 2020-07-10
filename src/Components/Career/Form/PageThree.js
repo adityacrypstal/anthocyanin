@@ -280,7 +280,7 @@ const PageThree = (props) => {
                    </div>
                    <hr/>
                    <div className="row">
-                       <div className="col-md-2">
+                       <div className="col-md-3">
                            <div className="form-group">
                                <label htmlFor="exampleFormControlTextarea1">Ph.D Topic</label>
                                <input type="text" className="form-control" name={'phd_name'} value={props.values.phd_name}
