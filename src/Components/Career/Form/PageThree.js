@@ -174,7 +174,7 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">Degree Mark</label>
+                               <label htmlFor="exampleFormControlTextarea1">Degree Course Name</label>
                                <input type="text" className="form-control" name={'degree_name'}
                                       value={props.values.degree_name}
                                       onChange={e => {
@@ -229,7 +229,7 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">PG Subject</label>
+                               <label htmlFor="exampleFormControlTextarea1">PG Course Name</label>
                                <input type="text" className="form-control" name={'pg_name'} value={props.values.pg_name}
                                       onChange={e => {
                                           props.handleChange(e);
@@ -282,33 +282,12 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">Ph.D Topic</label>
+                               <label htmlFor="exampleFormControlTextarea1">Ph.D Specialization</label>
                                <input type="text" className="form-control" name={'phd_name'} value={props.values.phd_name}
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
                                       placeholder="Ph.D Topic "/>
-                           </div>
-                       </div>
-                       <div className="col-md-2">
-                           <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">Ph.D Mark</label>
-                               <input type="text" className="form-control" name={'phd_mark'} value={props.values.phd_mark}
-                                      onChange={e => {
-                                          props.handleChange(e);
-                                      }}
-                                      placeholder="Ph.D Percentage "/>
-                           </div>
-                       </div>
-                       <div className="col-md-2">
-                           <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">Ph.D Percentage</label>
-                               <input type="text" className="form-control" name={'phd_percent'}
-                                      value={props.values.phd_percent}
-                                      onChange={e => {
-                                          props.handleChange(e);
-                                      }}
-                                      placeholder="Ph.D Percentage "/>
                            </div>
                        </div>
                        <div className="col-md-3">

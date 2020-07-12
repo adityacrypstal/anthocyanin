@@ -124,15 +124,7 @@ const Success = (props) => {
                     <h3>Experience</h3>
                     <hr/>
                     <div className="row">
-                        <div className="col-md-2">
-                            <label htmlFor="exampleFormControlTextarea1">Experience</label>
-                            <input type="email" className="form-control" name={'company_exp1'}
-                                   onChange={e => {
-                                       props.handleChange(e);
-                                   }} value={props.values.company_exp1}
-                                   placeholder="Experience"/>
 
-                        </div>
                         <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Name of Company</label>
@@ -144,7 +136,7 @@ const Success = (props) => {
                                        placeholder="Name of Company"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Designation</label>
                                 <input type="email" className="form-control" name={'company_period1'}
@@ -155,7 +147,7 @@ const Success = (props) => {
                                        placeholder="Designation"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <label htmlFor="exampleFormControlTextarea1">Period</label>
                             <input type="email" className="form-control" name={'comapny_designation1'}
                                    value={props.values.comapny_designation1}
@@ -177,15 +169,7 @@ const Success = (props) => {
                     </div>
                     <hr/>
                     <div className="row">
-                        <div className="col-md-2">
-                            <label htmlFor="exampleFormControlTextarea1">Experience</label>
-                            <input type="email" className="form-control" name={'company_exp2'}
-                                   onChange={e => {
-                                       props.handleChange(e);
-                                   }} value={props.values.company_exp2}
-                                   placeholder="Experience"/>
 
-                        </div>
                         <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Name of Company</label>
@@ -197,7 +181,7 @@ const Success = (props) => {
                                        placeholder="Name of Company"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Designation</label>
                                 <input type="email" className="form-control" name={'company_period2'}
@@ -208,7 +192,7 @@ const Success = (props) => {
                                        placeholder="Designation"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <label htmlFor="exampleFormControlTextarea1">Period</label>
                             <input type="email" className="form-control" name={'comapny_designation2'}
                                    value={props.values.comapny_designation2}
@@ -230,15 +214,7 @@ const Success = (props) => {
                     </div>
                     <hr/>
                     <div className="row">
-                        <div className="col-md-2">
-                            <label htmlFor="exampleFormControlTextarea1">Experience</label>
-                            <input type="email" className="form-control" name={'company_exp3'}
-                                   onChange={e => {
-                                       props.handleChange(e);
-                                   }} value={props.values.company_exp3}
-                                   placeholder="Experience"/>
 
-                        </div>
                         <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Name of Company</label>
@@ -250,7 +226,7 @@ const Success = (props) => {
                                        placeholder="Name of Company"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Designation</label>
                                 <input type="email" className="form-control" name={'company_period3'}
@@ -261,7 +237,7 @@ const Success = (props) => {
                                        placeholder="Designation"/>
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-3">
                             <label htmlFor="exampleFormControlTextarea1">Period</label>
                             <input type="email" className="form-control" name={'comapny_designation3'}
                                    value={props.values.comapny_designation3}

@@ -50,8 +50,6 @@ class Career extends Component {
         pg_percent: "",
         pg_clg: "",
         pg_passingout: "",
-        phd_mark: "",
-        phd_percent: "",
         phd_clg: "",
         phd_passingout: "",
         refer_person: "",
@@ -70,9 +68,6 @@ class Career extends Component {
         company_period3: "",
         comapny_designation3: "",
         company_keyresponsibility3: "",
-        company_exp1: "",
-        company_exp2: "",
-        company_exp3: "",
         refer_person_position: "",
         refer_person2_position: "",
         sign:null
