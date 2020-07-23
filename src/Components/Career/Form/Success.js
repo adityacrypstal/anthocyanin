@@ -53,70 +53,70 @@ const Success = (props) => {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Person</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Person<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_person'}
                                        value={props.values.refer_person}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Person (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Person Position</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Person Position<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_person_position'}
                                        value={props.values.refer_person_position}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Person Position (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Contact</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Contact<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_contact'}
                                        value={props.values.refer_contact}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Contact (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Person</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Person<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_person2'}
                                        value={props.values.refer_person2}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Person (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Person Position</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Person Position<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_person2_position'}
                                        value={props.values.refer_person2_position}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Person Position (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Reference Contact</label>
+                                <label htmlFor="exampleFormControlTextarea1">Reference Contact<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'refer_contact2'}
                                        value={props.values.refer_contact2}
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Reference Contact (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Name of Company"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -144,7 +144,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Designation"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -154,7 +154,7 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }}
-                                   placeholder="Period"/>
+                                   placeholder=""/>
 
                         </div>
                         <div className="col-md-3">
@@ -163,7 +163,7 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }} value={props.values.company_keyresponsibility1}
-                                   placeholder="Key Responsibility"/>
+                                   placeholder=""/>
 
                         </div>
                     </div>
@@ -178,7 +178,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Name of Company"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -189,7 +189,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Designation"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -199,7 +199,7 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }}
-                                   placeholder="Period"/>
+                                   placeholder=""/>
 
                         </div>
                         <div className="col-md-3">
@@ -208,7 +208,7 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }} value={props.values.company_keyresponsibility2}
-                                   placeholder="Key Responsibility"/>
+                                   placeholder=""/>
 
                         </div>
                     </div>
@@ -223,7 +223,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Name of Company"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -234,7 +234,7 @@ const Success = (props) => {
                                        onChange={e => {
                                            props.handleChange(e);
                                        }}
-                                       placeholder="Designation"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -244,7 +244,7 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }}
-                                   placeholder="Period"/>
+                                   placeholder=""/>
 
                         </div>
                         <div className="col-md-3">
@@ -253,14 +253,14 @@ const Success = (props) => {
                                    onChange={e => {
                                        props.handleChange(e);
                                    }} value={props.values.company_keyresponsibility3}
-                                   placeholder="Key Responsibility"/>
+                                   placeholder=""/>
 
                         </div>
                     </div>
                    <div className={"row"}>
                        <div className={"col-md-4"}>
                            <div className={"form-group"}>
-                               <label htmlFor="exampleFormControlInput1">Upload your Sign</label>
+                               <label htmlFor="exampleFormControlInput1">Upload your Sign<sup>*</sup></label>
                                <div className="custom-file">
                                    <input type="file" className="custom-file-input" id="validatedCustomFile" name={'sign'}
                                           required onChange={e => {

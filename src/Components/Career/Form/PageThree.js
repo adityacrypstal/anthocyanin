@@ -66,52 +66,52 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">10th Course Name</label>
+                               <label htmlFor="exampleFormControlTextarea1">10th Course Name<sup>*</sup></label>
                                <input type="email" className="form-control" name={'s10_name'} value={props.values.s10_name}
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="SSLC, AISSC etc"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">10th Mark</label>
+                               <label htmlFor="exampleFormControlTextarea1">10th Mark<sup>*</sup></label>
                                <input type="email" className="form-control" name={'s10_mark'} value={props.values.s10_mark}
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="10th Mark (Required)"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">10th Percentage</label>
+                               <label htmlFor="exampleFormControlTextarea1">10th Percentage<sup>*</sup></label>
                                <input type="email" className="form-control" name={'s10_percent'}
                                       value={props.values.s10_percent}
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="10th Percentage (Required)"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-3">
-                           <label htmlFor="exampleFormControlTextarea1">Institution</label>
+                           <label htmlFor="exampleFormControlTextarea1">Institution<sup>*</sup></label>
                            <input type="email" className="form-control" name={'s10_clg'} value={props.values.s10_clg}
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Institution (Required)"/>
+                                  placeholder=""/>
 
                        </div>
                        <div className="col-md-2">
-                           <label htmlFor="exampleFormControlTextarea1">Year of Passing out</label>
+                           <label htmlFor="exampleFormControlTextarea1">Year of Passing out<sup>*</sup></label>
                            <input type="email" className="form-control" name={'s10_passingout'}
                                   value={props.values.s10_passingout}
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Year of Passing out (Required)"/>
+                                  placeholder=""/>
 
                        </div>
                    </div>
@@ -119,54 +119,54 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">12th Course Name</label>
+                               <label htmlFor="exampleFormControlTextarea1">12th Course Name<sup>*</sup></label>
                                <input type="text" className="form-control" name={'s12_name'} value={props.values.s12_name}
                                       onChange={e => {
                                           props.handleChange(e);
                                           validator(e)
                                       }}
-                                      placeholder="VHSE, DHSE, ITI, Poly etc"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">12th Mark</label>
+                               <label htmlFor="exampleFormControlTextarea1">12th Mark<sup>*</sup></label>
                                <input type="text" className="form-control" name={'s12_mark'} value={props.values.s12_mark}
                                       onChange={e => {
                                           props.handleChange(e);
                                           validator(e)
                                       }}
-                                      placeholder="12th Mark (Required)"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
                            <div className="form-group">
-                               <label htmlFor="exampleFormControlTextarea1">12th Percentage</label>
+                               <label htmlFor="exampleFormControlTextarea1">12th Percentage<sup>*</sup></label>
                                <input type="text" className="form-control" name={'s12_percent'}
                                       value={props.values.s12_percent}
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="12th Percentage (Required)"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-3">
-                           <label htmlFor="exampleFormControlTextarea1">Institution</label>
+                           <label htmlFor="exampleFormControlTextarea1">Institution<sup>*</sup></label>
                            <input type="text" className="form-control" name={'s12_clg'} value={props.values.s12_clg}
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Institution (Required)"/>
+                                  placeholder=""/>
 
                        </div>
                        <div className="col-md-2">
-                           <label htmlFor="exampleFormControlTextarea1">Year of Passing out</label>
+                           <label htmlFor="exampleFormControlTextarea1">Year of Passing out<sup>*</sup></label>
                            <input type="text" className="form-control" name={'s12_passingout'}
                                   value={props.values.s12_passingout}
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Year of Passing out (Required)"/>
+                                  placeholder=""/>
 
                        </div>
                    </div>
@@ -180,7 +180,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="B.Tech, B.Sc etc"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
@@ -191,7 +191,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Degree Percentage "/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
@@ -202,7 +202,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Degree Percentage "/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-3">
@@ -211,7 +211,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Institution (Required)"/>
+                                  placeholder=""/>
 
                        </div>
                        <div className="col-md-2">
@@ -221,7 +221,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Year of Passing out "/>
+                                  placeholder=""/>
 
                        </div>
                    </div>
@@ -234,7 +234,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Post Graduation Subject"/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
@@ -244,7 +244,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Post Graduation Percentage "/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-2">
@@ -255,7 +255,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Degree Percentage "/>
+                                      placeholder=""/>
                            </div>
                        </div>
                        <div className="col-md-3">
@@ -264,7 +264,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Institution "/>
+                                  placeholder=""/>
 
                        </div>
                        <div className="col-md-2">
@@ -274,7 +274,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Year of Passing out "/>
+                                  placeholder=""/>
 
                        </div>
                    </div>
@@ -287,7 +287,7 @@ const PageThree = (props) => {
                                       onChange={e => {
                                           props.handleChange(e);
                                       }}
-                                      placeholder="Ph.D Topic "/>
+                                      placeholder=" "/>
                            </div>
                        </div>
                        <div className="col-md-3">
@@ -296,7 +296,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Institution "/>
+                                  placeholder=""/>
 
                        </div>
                        <div className="col-md-2">
@@ -306,7 +306,7 @@ const PageThree = (props) => {
                                   onChange={e => {
                                       props.handleChange(e);
                                   }}
-                                  placeholder="Year of Passing out "/>
+                                  placeholder=""/>
 
                        </div>
                    </div>

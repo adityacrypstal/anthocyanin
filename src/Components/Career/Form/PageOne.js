@@ -72,7 +72,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }} value={props.values.firstName}
-                                       placeholder="Enter First Name (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -83,7 +83,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Enter Last Name (Required)" value={props.values.lastName}/>
+                                       placeholder="" value={props.values.lastName}/>
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const PageOne = (props) => {
                                     props.handleChange(e);
                                     validator(e)
                                 }}
-                                          value={props.values.currentAddress} placeholder={"Required"}/>
+                                          value={props.values.currentAddress} placeholder={""}/>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -107,7 +107,7 @@ const PageOne = (props) => {
                                     props.handleChange(e);
                                     validator(e)
                                 }}
-                                          value={props.values.permanentAddress} placeholder={"Required"}/>
+                                          value={props.values.permanentAddress} placeholder={""}/>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="+91 9567682232 (Required)" value={props.values.phone}
+                                       placeholder="" value={props.values.phone}
                                        name={'phone'}/>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="name@example.com (Required)" value={props.values.email}
+                                       placeholder="" value={props.values.email}
                                        name={'email'}/>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Citizenship (Required)" value={props.values.citizen}/>
+                                       placeholder="" value={props.values.citizen}/>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -170,7 +170,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Mother Tongue (Required)" value={props.values.motherTongue}/>
+                                       placeholder="" value={props.values.motherTongue}/>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Town/Village (Required)" value={props.values.town}/>
+                                       placeholder="" value={props.values.town}/>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -194,7 +194,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="District (Required)" value={props.values.district}/>
+                                       placeholder="" value={props.values.district}/>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -205,7 +205,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="State (Required)" value={props.values.state}/>
+                                       placeholder="" value={props.values.state}/>
                             </div>
                         </div>
                     </div>
@@ -218,7 +218,7 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Religon (Required)" value={props.values.religon}/>
+                                       placeholder="" value={props.values.religon}/>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -229,11 +229,11 @@ const PageOne = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Language Known (Required)" value={props.values.language}/>
+                                       placeholder="" value={props.values.language}/>
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <label htmlFor="exampleFormControlInput1">Upload your photo</label>
+                            <label htmlFor="exampleFormControlInput1">Upload your photo<sup>*</sup></label>
                             <div className="custom-file">
                                 <input type="file" className="custom-file-input" id="validatedCustomFile" name={'file'}
                                        required onChange={e => {

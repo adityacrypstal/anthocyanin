@@ -2458,3 +2458,4 @@ p{
 .controller button{
     margin-left:10px !important;
 }
+.page-item.active .page-link{background-color: var(--main-color);border-color: var(--main-color)}

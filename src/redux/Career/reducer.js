@@ -13,8 +13,10 @@ export default function careerReducer(state = initState, {type, payload, ...acti
         case actions.UPDATE_CAREERS: {
             return {
                 ...state,
-                careers: action.careers,
-                totalCount: action.careers.length,
+                careers: action.careers.data,
+                totalCount: action.careers.totalElements,
+                page: action.careers.page,
+                totalPages: action.careers.totalPages,
                 loading: false,
                 initialCareer: true
             };

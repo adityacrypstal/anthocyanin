@@ -54,7 +54,7 @@ const PageTwo = (props) => {
                 <form className={'container'}>
                     <div className="row">
                         <div className="col-md-4">
-                            <label htmlFor="exampleFormControlSelect1">Marital Status</label>
+                            <label htmlFor="exampleFormControlSelect1">Marital Status<sup>*</sup></label>
                             <select className="form-control" name={'marital'} value={props.values.marital}
                                     onChange={e => {
                                         props.handleChange(e);
@@ -74,7 +74,7 @@ const PageTwo = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Spouce Name"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -85,72 +85,72 @@ const PageTwo = (props) => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Spouce Name"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-4">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Phsical Challenges</label>
+                                <label htmlFor="exampleFormControlTextarea1">Physical Challenges<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'physical_challenges'} value={props.values.physical_challenges}
                                        onChange={e => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Spouce Name"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <label htmlFor="exampleFormControlTextarea1">Epidemic</label>
+                            <label htmlFor="exampleFormControlTextarea1">Epidemic<sup>*</sup></label>
                             <input type="email" className="form-control" name={'epidemic'} value={props.values.epidemic}
                                    onChange={e => {
                                        props.handleChange(e);
                                        validator(e)
                                    }}
-                                   placeholder="Epidemic (Required)"/>
+                                   placeholder=""/>
 
                         </div>
                         <div className="col-md-4">
-                            <label htmlFor="exampleFormControlTextarea1">Allergic</label>
+                            <label htmlFor="exampleFormControlTextarea1">Allergic<sup>*</sup></label>
                             <input type="email" className="form-control" name={'allergic'} value={props.values.allergic}
                                    onChange={e => {
                                        props.handleChange(e);
                                        validator(e)
                                    }}
-                                   placeholder="Allergic (Required)"/>
+                                   placeholder=""/>
 
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlInput1">Mother Name</label>
+                                <label htmlFor="exampleFormControlInput1">Mother Name<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'mother_name'} value={props.values.mother_name}
                                        onChange={e => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Mother Name (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlInput1">Father Name</label>
+                                <label htmlFor="exampleFormControlInput1">Father Name<sup>*</sup></label>
                                 <input type="email" className="form-control" name={'father_name'} value={props.values.father_name}
                                        onChange={e => {
                                            props.handleChange(e);
                                            validator(e)
                                        }}
-                                       placeholder="Father Name (Required)"/>
+                                       placeholder=""/>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlInput1">Mother Address</label>
-                                <textarea className="form-control" name={'mother_address'} rows="2" placeholder={"Required"} onChange={e => {
+                                <label htmlFor="exampleFormControlInput1">Mother Address<sup>*</sup></label>
+                                <textarea className="form-control" name={'mother_address'} rows="2" placeholder={""} onChange={e => {
                                     props.handleChange(e);
                                     validator(e)
                                 }} value={props.values.mother_address}/>
@@ -159,8 +159,8 @@ const PageTwo = (props) => {
                         </div>
                         <div className="col-md-6">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlInput1">Father Address</label>
-                                <textarea className="form-control" name={'father_address'} rows="2" placeholder={"Required"} onChange={e => {
+                                <label htmlFor="exampleFormControlInput1">Father Address<sup>*</sup></label>
+                                <textarea className="form-control" name={'father_address'} rows="2" placeholder={""} onChange={e => {
                                     props.handleChange(e);
                                     validator(e)
                                 }} value={props.values.father_address}/>

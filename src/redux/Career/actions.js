@@ -5,8 +5,9 @@ const actions = {
     APPLY_CAREERS:'APPLY_CAREERS',
     APPLYING:'APPLYING',
     APPLIED:'APPLIED',
-    getCareers: () => ({
-        type: actions.GET_CAREERS
+    getCareers: (page) => ({
+        type: actions.GET_CAREERS,
+        payload:page
     }),
     apply:(data)=>({
         type: actions.APPLY_CAREERS,

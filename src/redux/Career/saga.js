@@ -5,9 +5,9 @@ import config from '../../config'
 import swal from "sweetalert";
 
 
-const listCareers = async () =>
+const listCareers = async (page, size = 5) =>
     await fetch(
-        `${config.API_URL}/api/cms/get_careers`,
+        `${config.API_URL}/api/cms/get_careers_paginated?keyword=&page=${page}&size=${size}&sort=title&order=ASC&status=`,
     )
         .then(res => res.json())
         .then(res => res)
@@ -40,20 +40,19 @@ const applyCareer = async (requestOptions) =>
         });
 
 
-export function* getCareers() {
+export function* getCareers({payload}) {
     try {
         yield put({
             type: actions.LOADING
         });
-        const {data, error} = yield call(
-            listCareers
+        const {data, page, size, totalElements, totalPages, error} = yield call(
+            listCareers,
+            payload
         );
-        // const data = datas;
-        // const error = null;
         if (data) {
             yield put({
                 type: actions.UPDATE_CAREERS,
-                careers: data,
+                careers: {data, page, size, totalElements, totalPages},
             });
         } else {
             yield put({

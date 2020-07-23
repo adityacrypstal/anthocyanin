@@ -1,18 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import careerAction from "../../redux/Career/actions";
 import {useHistory} from "react-router-dom";
 import CareerLoader from "../../Helpers/CareerLoader";
 
 const ListCareers = () => {
-    const {initialCareer, careers, loading} = useSelector(state => state.careers);
+    const {initialCareer, careers, loading,totalCount, page:currentPage, totalPages} = useSelector(state => state.careers);
     const dispatch = useDispatch();
+    const [page, setPage]= useState(1);
     React.useEffect(() => {
         if (!initialCareer) {
-            dispatch(careerAction.getCareers());
+            dispatch(careerAction.getCareers(page));
         }
-    }, [dispatch, initialCareer]);
+    }, [dispatch, initialCareer, page]);
     const history = useHistory();
+    const handleChange = (e) =>{
+        setPage(e);
+        dispatch(careerAction.getCareers(e))
+    };
+    const pages = () =>{
+        let items = [];
+        for(let i = 1; i <= totalPages; i++){
+            items.push(<li className={`page-item ${page===i ? 'active' : ''}`}><a className="page-link" onClick={()=>handleChange(i)}>{i}</a></li>)
+        }
+        return items
+    };
+
     return (
         <div>
             <div className="breadcrumb-wapper">
@@ -75,6 +88,13 @@ const ListCareers = () => {
                                 </li>
                             </div>)}
                         </ul>
+                        <nav aria-label="Page navigation example" style={{display:`${totalCount>5 ? 'block':'none'}`}}>
+                            <ul className="pagination justify-content-end">
+                                {page!=1?<li className="page-item"><a className="page-link" onClick={()=>handleChange(page-1)}>Previous</a></li>:null}
+                                {pages()}
+                                {page!=totalPages?<li className="page-item"><a className="page-link"onClick={()=>handleChange(page+1)}>Next</a></li>:null}
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
