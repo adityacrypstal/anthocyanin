@@ -67,14 +67,16 @@ const ListCareers = () => {
                                         ))}
 
                                     </div>
-                                    <div className="location">
-                                        <p className="state">{data.location}</p>
-                                        <p className="country">{data.country}</p>
-                                    </div>
-                                    <div className="apply-btn">
-                                        <a onClick={() => history.push(`/career/${data.id}`)} className="btn"
-                                           role="button">VIEW AND APPLY</a>
-                                    </div>
+                                   <div className={'carreerList'}>
+                                       <div className="location">
+                                           <p className="state">{data.location}</p>
+                                           <p className="country">{data.country}</p>
+                                       </div>
+                                       <div className="apply-btn">
+                                           <a onClick={() => history.push(`/career/${data.id}`)} className="btn"
+                                              role="button">VIEW AND APPLY</a>
+                                       </div>
+                                   </div>
                                 </li>
                             )) : (<div>
                                 <li className="d-flex">
