@@ -22,10 +22,10 @@ const applyCareer = async (requestOptions) =>
         .then(res => {
             swal({
                 title: "Success",
-                text: "Thank You For Applying!",
+                text: "You have successfully completed your application and please check your mail for your application and send a hard copy of the same to our address for the completion of application process!",
                 icon: "success",
                 buttons: false,
-                timer: 2000
+                timer: 5000
             });
             window.location.href = '/careers'
         })

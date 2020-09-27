@@ -229,6 +229,61 @@ const PageThree = (props) => {
                    <div className="row">
                        <div className="col-md-3">
                            <div className="form-group">
+                               <label htmlFor="exampleFormControlTextarea1">Diploma / ITI Course</label>
+                               <input type="text" className="form-control" name={'diploma_name'}
+                                      value={props.values.diploma_name}
+                                      onChange={e => {
+                                          props.handleChange(e);
+                                      }}
+                                      placeholder=""/>
+                           </div>
+                       </div>
+                       <div className="col-md-2">
+                           <div className="form-group">
+                               <label htmlFor="exampleFormControlTextarea1">Diploma / ITI  Mark</label>
+                               <input type="text" className="form-control" name={'diploma_mark'}
+                                      value={props.values.diploma_mark}
+                                      onChange={e => {
+                                          props.handleChange(e);
+                                      }}
+                                      placeholder=""/>
+                           </div>
+                       </div>
+                       <div className="col-md-2">
+                           <div className="form-group">
+                               <label htmlFor="exampleFormControlTextarea1">Diploma / ITI Percentage</label>
+                               <input type="text" className="form-control" name={'diploma_percent'}
+                                      value={props.values.diploma_percent}
+                                      onChange={e => {
+                                          props.handleChange(e);
+                                      }}
+                                      placeholder=""/>
+                           </div>
+                       </div>
+                       <div className="col-md-3">
+                           <label htmlFor="exampleFormControlTextarea1">Institution</label>
+                           <input type="text" className="form-control" name={'diploma_clg'} value={props.values.diploma_clg}
+                                  onChange={e => {
+                                      props.handleChange(e);
+                                  }}
+                                  placeholder=""/>
+
+                       </div>
+                       <div className="col-md-2">
+                           <label htmlFor="exampleFormControlTextarea1">Year of Passing out</label>
+                           <input type="text" className="form-control" name={'diploma_passing_out'}
+                                  value={props.values.diploma_passing_out}
+                                  onChange={e => {
+                                      props.handleChange(e);
+                                  }}
+                                  placeholder=""/>
+
+                       </div>
+                   </div>
+                   <hr/>
+                   <div className="row">
+                       <div className="col-md-3">
+                           <div className="form-group">
                                <label htmlFor="exampleFormControlTextarea1">PG Course Name</label>
                                <input type="text" className="form-control" name={'pg_name'} value={props.values.pg_name}
                                       onChange={e => {

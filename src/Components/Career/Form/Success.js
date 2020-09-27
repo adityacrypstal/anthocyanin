@@ -21,10 +21,12 @@ const Success = (props) => {
         sign: null
     })
     const submit = async () => {
-        let data = format(props.values)
-        data.career_id = id
-        await dispatch(careerAction.apply(data))
-    }
+        if(!applying){
+            let data = format(props.values);
+            data.career_id = id;
+            await dispatch(careerAction.apply(data))
+        }
+    };
     const value = () => {
         return props.values.refer_person === '' || props.values.refer_person_position === ''|| props.values.refer_contact === ''||
             props.values.refer_person2 === '' || props.values.refer_person2_position === ''|| props.values.refer_contact2 === ''|| props.values.sign === '';
@@ -138,7 +140,7 @@ const Success = (props) => {
                         </div>
                         <div className="col-md-3">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Designation</label>
+                                <label htmlFor="exampleFormControlTextarea1">Period</label>
                                 <input type="email" className="form-control" name={'company_period1'}
                                        value={props.values.company_period1}
                                        onChange={e => {
@@ -148,7 +150,7 @@ const Success = (props) => {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor="exampleFormControlTextarea1">Period</label>
+                            <label htmlFor="exampleFormControlTextarea1">Designation</label>
                             <input type="email" className="form-control" name={'comapny_designation1'}
                                    value={props.values.comapny_designation1}
                                    onChange={e => {
@@ -183,7 +185,7 @@ const Success = (props) => {
                         </div>
                         <div className="col-md-3">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Designation</label>
+                                <label htmlFor="exampleFormControlTextarea1">Period</label>
                                 <input type="email" className="form-control" name={'company_period2'}
                                        value={props.values.company_period2}
                                        onChange={e => {
@@ -193,7 +195,7 @@ const Success = (props) => {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor="exampleFormControlTextarea1">Period</label>
+                            <label htmlFor="exampleFormControlTextarea1">Designation </label>
                             <input type="email" className="form-control" name={'comapny_designation2'}
                                    value={props.values.comapny_designation2}
                                    onChange={e => {
@@ -228,7 +230,7 @@ const Success = (props) => {
                         </div>
                         <div className="col-md-3">
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlTextarea1">Designation</label>
+                                <label htmlFor="exampleFormControlTextarea1">Period</label>
                                 <input type="email" className="form-control" name={'company_period3'}
                                        value={props.values.company_period3}
                                        onChange={e => {
@@ -238,7 +240,7 @@ const Success = (props) => {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor="exampleFormControlTextarea1">Period</label>
+                            <label htmlFor="exampleFormControlTextarea1">Designation</label>
                             <input type="email" className="form-control" name={'comapny_designation3'}
                                    value={props.values.comapny_designation3}
                                    onChange={e => {

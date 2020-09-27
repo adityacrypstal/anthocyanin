@@ -15,6 +15,7 @@ const PageOne = (props) => {
         is_firstName: '',
         is_lastName: '',
         is_currentAddress: '',
+        is_dob: '',
         is_permanentAddress: '',
         is_phone: '',
         is_email: '',
@@ -27,15 +28,10 @@ const PageOne = (props) => {
         is_language: '',
         filename: null
     })
-    const validate = () => {
-        return state.is_firstName === '' && state.is_lastName === '' && state.is_currentAddress === '' && state.is_permanentAddress === '' && state.is_phone === '' &&
-            state.is_email === '' && state.is_citizen === '' && state.is_motherTongue === '' && state.is_town === '' && state.is_district === '' &&
-            state.is_state === '' && state.is_religon === '' && state.is_language === '';
-    }
     const values = () => {
         return props.values.firstName === '' || props.values.lastName === '' || props.values.currentAddress === '' || props.values.permanentAddress === '' || props.values.phone === '' ||
             props.values.email === '' || props.values.citizen === '' || props.values.motherTongue === '' || props.values.town === '' || props.values.district === '' ||
-            props.values.state === '' || props.values.religon === '' || props.values.language === '' || !props.values.file;
+            props.values.state === '' || props.values.religon === '' || props.values.language === '' || !props.values.file || !props.values.dob;
     }
     const next = () => {
         console.log(props.values.filename);
@@ -57,6 +53,20 @@ const PageOne = (props) => {
         setState({
             ['is_' + e.target.name]: is_required(e.target.value, 2, 20)
         })
+    };
+    const today = () =>{
+        let today = new Date();
+        let dd = today.getDate();
+        let mm = today.getMonth()+1; //January is 0!
+        let yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd
+        }
+        if(mm<10){
+            mm='0'+mm
+        }
+
+        return yyyy+'-'+mm+'-'+dd;
     }
     return (
         <div>
@@ -112,7 +122,7 @@ const PageOne = (props) => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Phone Number<sup>*</sup></label>
                                 <input type="email" className="form-control" id="exampleFormControlInput1"
@@ -124,7 +134,7 @@ const PageOne = (props) => {
                                        name={'phone'}/>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Email<sup>*</sup></label>
                                 <input type="email" className="form-control" id="exampleFormControlInput1"
@@ -134,6 +144,18 @@ const PageOne = (props) => {
                                        }}
                                        placeholder="" value={props.values.email}
                                        name={'email'}/>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlInput1">Date Of Birth<sup>*</sup></label>
+                                <input type="date" className="form-control" id="exampleFormControlInput1" max={today()}
+                                       onChange={e => {
+                                           props.handleChange(e);
+                                           validator(e)
+                                       }}
+                                       placeholder="" value={props.values.dob}
+                                       name={'dob'}/>
                             </div>
                         </div>
                     </div>
